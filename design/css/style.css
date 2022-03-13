@@ -1131,3 +1131,27 @@ h1, h2, h3, h4, h5, h6 {
     width: 600px;
     max-width: 100%;
 }
+.f-404 {
+    min-width: 100vw;
+    min-height: 100vh;
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+}
+.title-404 {
+    color: #de4e15;
+    font-size: 145px;
+    font-weight: 700;
+    line-height: 145px;
+}
+.subtitle-404 {
+    color: #189fdb;
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+.fs-16 {
+    font-size: 16px !important;
+}

@@ -505,6 +505,12 @@
 		height: 100%;
 		width: auto;
 	}
+	.title-404 {
+		font-size: 100px;
+	}
+	.subtitle-404 {
+		font-size: 24px;
+	}
 }
 @media screen and (max-width: 400px) {
 	.top-header span:first-child {
@@ -520,5 +526,12 @@
 	}
 	.list-careers .desc ul li, .list-careers .salary, .act-btn .btn-outline-primary {
 		font-size: 12px;
+	}
+	.title-404 {
+		font-size: 75px;
+		line-height: 75px;
+	}
+	.subtitle-404 {
+		font-size: 18px;
 	}
 }
