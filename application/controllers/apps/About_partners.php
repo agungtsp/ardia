@@ -103,7 +103,7 @@ class About_partners extends CI_Controller {
 				if($idedit && !empty($post['img'][$key])){
 					$data_save['img']	= $post['img'][$key];
 				}elseif($idedit){
-						// $datas 				= $this->slideshowModel->selectData($idedit,1);
+						// $datas 				= $this->slideshowmodel->selectData($idedit,1);
 					unset($data_save['img']);
 						// unset($data_save['img'])	= $datas['img'];
 				}else{

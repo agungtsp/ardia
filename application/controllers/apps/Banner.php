@@ -3,7 +3,7 @@
 class Banner extends CI_Controller {
 	function __construct(){
 		parent::__construct();
-		$this->load->model('Banner_Model');
+		$this->load->model('banner_model');
 		$this->load->model('frontendmenumodel');
 		$this->load->model('languagemodel');
 	}
@@ -16,8 +16,8 @@ class Banner extends CI_Controller {
 	public function add($id=''){
 		$id_lang_default = $this->languagemodel->langId();
 		if($id){
-			// $data = $this->Banner_Model->findById($id);
-			$datas 	= $this->Banner_Model->selectData($id);
+			// $data = $this->banner_model->findById($id);
+			$datas 	= $this->banner_model->selectData($id);
             if(!$datas){
 				die('404');
 			}
@@ -94,7 +94,7 @@ class Banner extends CI_Controller {
 	}
 	public function view($id=''){
 		if($id){
-			$datas 	= $this->Banner_Model->selectData($id);
+			$datas 	= $this->banner_model->selectData($id);
 			
 			if(!$datas){
 				die('404');
@@ -138,7 +138,7 @@ class Banner extends CI_Controller {
 		render('apps/banner/view',$data,'blank');
 	}
 	function records(){
-		$data = $this->Banner_Model->records();
+		$data = $this->banner_model->records();
 		foreach ($data['data'] as $key => $value) {
 			$data['data'][$key]['banner_title'] 	= quote_form($value['banner_title']);
 			$data['data'][$key]['publish_date'] 	= iso_date($value['publish_date']);
@@ -202,7 +202,7 @@ class Banner extends CI_Controller {
 					if($idedit && !empty($post['img'][$key])){
 						$data_save['img']	= $post['img'][$key];
 					}elseif($idedit){
-						// $datas 				= $this->Banner_Model->selectData($idedit,1);
+						// $datas 				= $this->banner_model->selectData($idedit,1);
 						unset($data_save['img']);
 						// unset($data_save['img'])	= $datas['img'];
 					}else{
@@ -216,7 +216,7 @@ class Banner extends CI_Controller {
 				// 	if($idedit && $post['img'][$key]){
 				// 		$data_save['img']	= $post['img'][$key];
 				// 	}elseif($idedit){
-				// 		$datas 				= $this->Banner_Model->selectData($idedit,1);
+				// 		$datas 				= $this->banner_model->selectData($idedit,1);
 				// 		$data_save['img']	= $datas['img'];
 				// 	}else{
 				// 		$data_save['img']	= $post['img'][$key];
@@ -228,12 +228,12 @@ class Banner extends CI_Controller {
 					auth_update();
 					$ret['message'] = 'Update Success';
 					$act			= "Update News";
-					$iddata 		= $this->Banner_Model->update($data_save,$idedit);
+					$iddata 		= $this->banner_model->update($data_save,$idedit);
 				}else{
 					auth_insert();
 					$ret['message'] = 'Insert Success';
 					$act			= "Insert News";
-					$iddata 		= $this->Banner_Model->insert($data_save);
+					$iddata 		= $this->banner_model->insert($data_save);
 				}
 
 				if($key==0){
@@ -250,8 +250,8 @@ class Banner extends CI_Controller {
 	function del(){
 		$this->db->trans_start();   
 		$id = $this->input->post('iddel');
-		$this->Banner_Model->delete($id);
-		$this->Banner_Model->delete2($id);
+		$this->banner_model->delete($id);
+		$this->banner_model->delete2($id);
 		$this->db->trans_complete();
 	}
 	

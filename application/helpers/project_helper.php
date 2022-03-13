@@ -5,12 +5,12 @@
  */
 function slider_widget(){
     $CI=& get_instance();
-	$CI->load->model('slideshowModel');
+	$CI->load->model('slideshowmodel');
 	$lang_id = get_language_id();
 
 	$CI->db->where('a.id_status_publish', '2');
 	$CI->db->order_by('a.publish_date', 'dsc')->limit(5);
-	$data = $CI->slideshowModel->findBy(array('id_lang' => $lang_id));
+	$data = $CI->slideshowmodel->findBy(array('id_lang' => $lang_id));
 	$i = 0;
     if ($data) {
 		foreach ($data as $key => $value) {

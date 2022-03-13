@@ -3,7 +3,7 @@
 class Slideshow extends CI_Controller {
 	function __construct(){
 		parent::__construct();
-		$this->load->model('slideshowModel');
+		$this->load->model('slideshowmodel');
 		$this->load->model('languagemodel');
 	}
 	function index(){
@@ -13,8 +13,8 @@ class Slideshow extends CI_Controller {
 	
 	public function add($id=''){
 		if($id){
-			// $data = $this->slideshowModel->findById($id);
-			$datas 	= $this->slideshowModel->selectData($id);
+			// $data = $this->slideshowmodel->findById($id);
+			$datas 	= $this->slideshowmodel->selectData($id);
 
             if(!$datas){
 				die('404');
@@ -72,7 +72,7 @@ class Slideshow extends CI_Controller {
 	}
 	public function view($id=''){
 		if($id){
-			$datas 	= $this->slideshowModel->selectData($id);
+			$datas 	= $this->slideshowmodel->selectData($id);
 			
 			if(!$datas){
 				die('404');
@@ -117,7 +117,7 @@ class Slideshow extends CI_Controller {
 		render('apps/slideshow/view',$data,'blank');
 	}
 	function records(){
-		$data = $this->slideshowModel->records();
+		$data = $this->slideshowmodel->records();
 		foreach ($data['data'] as $key => $value) {
 			$data['data'][$key]['slideshow_title'] 	= quote_form($value['slideshow_title']);
 			$data['data'][$key]['publish_date'] 	= iso_date($value['publish_date']);
@@ -168,7 +168,7 @@ class Slideshow extends CI_Controller {
 				if($idedit && $post['img'][$key]){
 					$data_save['img']	= $post['img'][$key];
 				}elseif($idedit){
-					$datas 				= $this->slideshowModel->selectData($idedit);
+					$datas 				= $this->slideshowmodel->selectData($idedit);
 					$data_save['img']	= $datas[$key]['img'];
 				}else{
 					$data_save['img']	= $post['img'][$key];
@@ -179,18 +179,18 @@ class Slideshow extends CI_Controller {
 						auth_update();
 						$ret['message'] = 'Update Success';
 						$act			= "Update Slideshow";
-						$iddata 		= $this->slideshowModel->update($data_save,$idedit);
+						$iddata 		= $this->slideshowmodel->update($data_save,$idedit);
 					}else{
 						auth_update();
 						$ret['message'] = 'Update Success';
 						$act			= "Update Slideshow";
-						$iddata 		= $this->slideshowModel->updateKedua($data_save,$idedit);
+						$iddata 		= $this->slideshowmodel->updateKedua($data_save,$idedit);
 					}
 				}else{
 					auth_insert();
 					$ret['message'] = 'Insert Success';
 					$act			= "Insert Slideshow";
-					$iddata 		= $this->slideshowModel->insert($data_save);
+					$iddata 		= $this->slideshowmodel->insert($data_save);
 				}
 
 				if($key==0){
@@ -207,8 +207,8 @@ class Slideshow extends CI_Controller {
 	function del(){
 		$this->db->trans_start();   
 		$id = $this->input->post('iddel');
-		$this->slideshowModel->delete($id);
-		$this->slideshowModel->delete2($id);
+		$this->slideshowmodel->delete($id);
+		$this->slideshowmodel->delete2($id);
 		$this->db->trans_complete();
 	}
 	

@@ -25,7 +25,7 @@ class Event extends CI_Controller {
         $this->load->model('newsmodel');
         $this->load->model('authgroup_model','authGroupModel');
         $this->load->model('newstagsmodel');
-        $this->load->model('slideshowModel');
+        $this->load->model('slideshowmodel');
         $this->load->model('web_config_model');
         $this->load->model('eventprice_model');
     }

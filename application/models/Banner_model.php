@@ -1,5 +1,5 @@
 <?php
-class Banner_Model extends  CI_Model{
+class banner_model extends  CI_Model{
 	var $table = 'banner';
 	var $tableAs = 'banner a';
     function __construct(){
