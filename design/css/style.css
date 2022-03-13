@@ -692,12 +692,25 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: 20px;
     transition: ease all .5s;
 }
-.list-item p, .product-detail .desc p {
+.list-item p, .product-detail .desc p, .product-detail p {
     margin-bottom: 20px;
     font-size: 18px;
     color: #7b7b7b;
     transition: ease all .5s;
     font-style: italic;
+}
+.c-detail p,
+.c-detail li {
+    margin-bottom: 20px;
+    font-size: 16px;
+    color: #7b7b7b;
+    transition: ease all .5s;
+}
+.c-detail ul {
+    margin-bottom: 20px;
+}
+.c-detail li {
+    margin-bottom: 0;
 }
 .list-item .price, .product-detail .desc .price {
     font-size: 30px;
@@ -960,4 +973,161 @@ h1, h2, h3, h4, h5, h6 {
 .articles-dtl {
     padding-top: 180px;
     padding-bottom: 120px;
+}
+.about {
+    padding-top: 70px;
+    padding-bottom: 120px;
+    transition: ease all .5s;
+    overflow: hidden;
+}
+.about p {
+    font-size: 24px;
+    color: #8b8b8b;
+}
+.row-about {
+    margin-bottom: 200px;
+    margin-left: -20px;
+    margin-right: -20px;
+}
+.row-about .col-md-6 {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.line-intro {
+    color: #de4e15;
+    font-size: 26px;
+    font-weight: 700;
+    font-style: italic;
+    text-align: center;
+    margin-bottom: 200px;
+}
+.row-about h3 {
+    color: #de4e15;
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+.row-about img {
+    width: 100%;
+}
+.box-shadow {
+    box-shadow: 0 0 10px rgba(0,0,0,.5);
+}
+.services-dtl .thumb {
+    border: 0;
+}
+.services-dtl .thumb img {
+    max-width: none;
+    max-height: none;
+    height: auto;
+    width: 100%;
+}
+.careers.p-page {
+    padding-top: 70px;
+    padding-bottom: 100px;
+}
+.list-careers {
+    display: block;
+    text-decoration: none;
+}
+.list-careers .d-flex {
+    align-items: center;
+}
+.list-careers .thumb {
+    width: 200px;
+    height: 180px;
+}
+.list-careers .thumb img {
+    height: 100%;
+    width: auto;
+}
+.list-careers .desc {
+    display: flex;
+    align-items: center;
+    padding-left: 30px;
+    width: 100%;
+}
+.list-careers h3 {
+    color: #de4e15;
+    font-size: 30px;
+    font-weight: 600;
+}
+.list-careers .desc ul {
+    padding: 0;
+}
+.list-careers .desc ul li {
+    list-style: none;
+    padding: 0;
+    color: #7b7b7b;
+    font-style: italic;
+    font-size: 18px;
+}
+.list-careers .salary {
+    font-size: 18px;
+    font-weight: 600;
+    color: #7b7b7b;
+}
+.act-btn .btn-outline-primary {
+    font-size: 18px;
+    border-width: 2px;
+    padding: 10px 50px;
+    width: 250px;
+    margin-right: 100px;
+}
+.list-careers {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 30px;
+    margin-bottom: 30px;
+}
+.pagination {
+    display: inline-flex;
+}
+.pagination .page-item {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.pagination .page-link {
+    color: #ccc;
+    font-size: 24px;
+    border: 0;
+}
+.pagination .page-link.active,
+.pagination .page-link.active:hover {
+    color: #189fdb;
+    border-radius: 0 !important;
+    opacity: 1;
+}
+.pagination .page-link:hover {
+    background: none;
+    opacity: .5;
+    color: #189fdb;
+}
+.title-dtl {
+    font-size: 28px;
+    font-weight: 700;
+    color: #444;
+}
+.col-dtl {
+    padding-left: 100px;
+}
+.pos-desc {
+    font-size: 16px;
+    color: #7b7b7b;
+    font-weight: 300;
+    font-style: italic;
+    display: flex;
+}
+.pos-desc td {
+    padding-top: 5px;
+    padding-bottom: 5px;   
+}
+.pos-desc td:first-child {
+    padding-right: 50px;
+}
+.btn-apply {
+    text-align: center;
+}
+.btn-apply .btn {
+    width: 600px;
+    max-width: 100%;
 }
