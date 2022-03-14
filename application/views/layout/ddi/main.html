@@ -35,8 +35,8 @@
 			<div class="container">
 				<div class="d-flex">
 					<div class="d-flex w-100">
-						<span><a href="mailto:info@ardiaperdana.id">info@ardiaperdana.id</a></span>
-						<span>+62 (021) 2452-0050</span>
+						<span><a href="mailto:{email_address}">{email_address}</a></span>
+						<span>{single_phone}</span>
 					</div>
 					<div class="lang">
 						<a href="{base_url}id" class="{active_id}">IND</a>
@@ -47,12 +47,12 @@
 		</div>
 		<nav class="navbar navbar-expand-lg navbar-ardia wow fadeInDown" data-wow-duration="1.5s">
 		  <div class="container c-navbar">
-			<a class="navbar-brand logo" href="{base_url_lang}"><img src="{base_url}asset/images/logo.png" alt=""></a>
+			<a class="navbar-brand logo" href="{base_url_lang}"><img src="{base_url}asset/images/logo.png" alt="{title_for_logo}" title="{title_for_logo}"></a>
 			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 			  <span class="navbar-toggler-icon"></span>
 			</button>
 			<div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-				<a class="logo-mobile" href="{base_url_lang}"><img src="{base_url}asset/images/logo-white.png" alt=""></a>
+				<a class="logo-mobile" href="{base_url_lang}"><img src="{base_url}asset/images/logo-white.png" alt="{title_for_logo}" alt="{title_for_logo}"></a>
 			  <ul class="navbar-nav">
 				<li class="nav-item">
 				  <a class="nav-link {active_home}" href="{base_url_lang}">Home</a>
@@ -88,9 +88,8 @@
 			<div class="row">
 				<div class="col-md-4 p-0 wow fadeInLeft" data-wow-duration="2.5s">
 					<div class="f-left">
-						<img src="{base_url}asset/images/logo.png" alt="" class="mb-4">
-						<p>Ardia Perdana Indonesia is Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. denim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-						<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+						<img src="{base_url}asset/images/logo.png" alt="{title_for_logo}" title="{title_for_logo}" class="mb-4">
+						{footer_teaser}
 					</div>
 				</div>
 				<div class="col-md-8 p-0">
@@ -100,15 +99,15 @@
 								<h4>All Useful Links</h4>
 								<div class="d-flex align-items-center mb-4">
 									<i data-feather="map-pin"></i>
-									<p class="ms-2 mb-0">Gading Bukit Indah Blok SB No.22-23 <br>North Jakarta 14240, Indonesia</p>
+									<p class="ms-2 mb-0">{address}</p>
 								</div>
 								<div class="d-flex align-items-center mb-4">
 									<i data-feather="phone"></i>
-									<p class="ms-2 mb-0">+62 (021) 2452-0050 <br>+62 (021) 2452-0051</p>
+									<p class="ms-2 mb-0">{number_phone}</p>
 								</div>
 								<div class="d-flex align-items-center">
 									<i data-feather="mail"></i>
-									<p class="ms-2 mb-0">info@ardiaperdana.id</p>
+									<a href="mailto:{email_address}" class="ms-2 mb-0">{email_address}</a>
 								</div>
 							</div>
 							<div class="col-md-4 wow fadeInRight mb-5" data-wow-duration="1.5s">
@@ -120,12 +119,15 @@
 									<li><a href="{base_url_lang}services">Services</a></li>
 									<li><a href="{base_url_lang}careers">Careers</a></li>
 									<li><a href="{base_url_lang}articles">Articles</a></li>
-									<li><a href="contact-us.html">Contact Us</a></li>
+									<li><a href="{base_url_lang}contactus">Contact Us</a></li>
 								</ul>
 							</div>
 							<div class="col-md-3 wow fadeInRight" data-wow-duration="2.5s">
 								<h4>Connect with Us</h4>
-								<a href="#"><i data-feather="instagram"></i> Follow us in Instagram</a>
+								<a href="{link_instagram}" target="_BLANK" class="{show_link_instagram}"><i data-feather="instagram"></i> Follow us in Instagram<br></a>
+								<a href="{link_facebook}" target="_BLANK" class="{show_link_facebook}"><i data-feather="facebook"></i> Follow us in Facebook<br></a>
+								<a href="{link_twitter}" target="_BLANK" class="{show_link_twitter}"><i data-feather="twitter"></i> Follow us in Twitter<br></a>
+								<a href="{link_youtube}" target="_BLANK" class="{show_link_youtube}"><i data-feather="youtube"></i> Follow us in Youtube<br></a>
 							</div>
 						</div>
 					</div>

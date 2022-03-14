@@ -173,6 +173,27 @@ function render($view,$data='',$layout="", $ret=false){
 	} else {
 		$data['active_en'] = 'active';
 	}
+
+	$CI->load->model('web_configuration_model');
+	$list_web_config = $CI->web_configuration_model->findBy();	
+	foreach($list_web_config as $value){
+		$data[str_replace('-', '_', generate_url($value['name']))] = $value['value'];
+		$data['link_instagram'] = str_replace(['<p>', '</p>'], ['',''], $data['link_instagram']);
+		$data['link_facebook'] = str_replace(['<p>', '</p>'], ['',''], $data['link_facebook']);
+		$data['link_twitter'] = str_replace(['<p>', '</p>'], ['',''], $data['link_twitter']);
+		$data['link_youtube'] = str_replace(['<p>', '</p>'], ['',''], $data['link_youtube']);
+		$data['iframe_gmaps'] = str_replace(['<p>', '</p>'], ['',''], $data['iframe_gmaps']);
+		$data['email_address'] = str_replace(['<p>', '</p>'], ['',''], $data['email_address']);
+		$data['whatsapp_phone'] = str_replace(['<p>', '</p>'], ['',''], $data['whatsapp_phone']);
+		$data['whatsapp_text'] = str_replace(['<p>', '</p>'], ['',''], $data['whatsapp_text']);
+		$data['single_phone'] = str_replace(['<p>', '</p>'], ['',''], $data['single_phone']);
+
+		$data['show_link_instagram'] = ($data['link_instagram']== '') ? 'd-none' : '';
+		$data['show_link_facebook'] = ($data['link_facebook']== '') ? 'd-none' : '';
+		$data['show_link_twitter'] = ($data['link_twitter']== '') ? 'd-none' : '';
+		$data['show_link_youtube'] = ($data['link_youtube']== '') ? 'd-none' : '';
+
+	}
 	if(is_array($data)){
 		$CI->data = array_merge($CI->data,$data);
    }
