@@ -82,3 +82,13 @@ $(document).ready(function() {
         }
     });
 });
+
+$('.owl-services-dtl').owlCarousel({
+    loop:true,
+    margin:10,
+    nav:true,
+    items:1,
+    dots: false,
+    navText : ["<i class='fa fa-chevron-left'></i>","<i class='fa fa-chevron-right'></i>"]
+    
+})

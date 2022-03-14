@@ -1155,3 +1155,40 @@ h1, h2, h3, h4, h5, h6 {
 .fs-16 {
     font-size: 16px !important;
 }
+.services-dtl {
+    display: block;
+}
+.services-dtl p {
+    font-style: normal;
+}
+.services-dtl img {
+    width: 100%;
+    margin-bottom: 20px;
+}
+.owl-services-dtl.owl-carousel .owl-nav button.owl-prev,
+.owl-services-dtl.owl-carousel .owl-nav button.owl-next {
+    position: absolute;
+    top: calc(50% - 30px);
+    width: 60px;
+    height: 60px;
+    border-radius: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-size: 28px;
+    padding: 0;
+    background: #fff;
+}
+.owl-services-dtl.owl-carousel .owl-nav button.owl-prev {
+    left: -180px;
+    padding-right: 3px !important;
+}
+.owl-services-dtl.owl-carousel .owl-nav button.owl-next {
+    right: -180px;
+    padding-left: 3px !important;
+}
+.owl-services-dtl.owl-carousel .owl-nav button.owl-prev:hover,
+.owl-services-dtl.owl-carousel .owl-nav button.owl-next:hover {
+    background: #189fdb;
+}

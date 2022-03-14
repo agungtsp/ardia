@@ -44,6 +44,12 @@
 		min-width: 300px;
 		max-width: 300px;
 	}
+	.owl-services-dtl.owl-carousel .owl-nav button.owl-prev {
+	    left: -100px;
+	}
+	.owl-services-dtl.owl-carousel .owl-nav button.owl-next {
+	    right: -100px;
+	}
 }
 @media screen and (max-width: 991px) {
 	header .navbar-collapse {
@@ -129,6 +135,12 @@
 	}
 	.col-dtl {
 		padding-left: 12.5px;
+	}
+	.owl-services-dtl.owl-carousel .owl-nav button.owl-prev {
+	    left: -80px;
+	}
+	.owl-services-dtl.owl-carousel .owl-nav button.owl-next {
+	    right: -80px;
 	}
 }
 @media screen and (max-width: 767px) {
@@ -340,8 +352,26 @@
 		padding-left: 5px;
 		padding-right: 5px;
 	}
+	.owl-services-dtl.owl-carousel .owl-nav button.owl-prev,
+	.owl-services-dtl.owl-carousel .owl-nav button.owl-next {
+		width: 40px;
+		height: 40px;
+		font-size: 16px;
+		top: 0;
+		opacity: .7
+	}
+	.owl-services-dtl.owl-carousel .owl-nav button.owl-prev {
+	    left: auto;
+	    right: 50px;
+	}
+	.owl-services-dtl.owl-carousel .owl-nav button.owl-next {
+	    right: 0;
+	}
 }
 @media screen and (max-width: 575px) {
+	.services-dtl .btn-outline-primary {
+		width: 100% !important;
+	}
 	.row-about p {
 		font-size: 16px;
 	}
