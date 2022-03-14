@@ -18,3 +18,8 @@ $lang['lang_call_us_now'] = 'Call Us Now!';
 $lang['lang_email_us'] = 'E-mail Us';
 $lang['lang_read_more'] = 'Read More';
 $lang['lang_content_contact_us'] = 'Tell Us your problems, <br>sand we will contact you for the best solutions!';
+
+$lang['lang_contact_fullname'] = 'Fullname';
+$lang['lang_contact_email'] = 'E-mail';
+$lang['lang_contact_whatsapp'] = 'Whatsapp Number';
+$lang['lang_contact_notes'] = 'Notes';

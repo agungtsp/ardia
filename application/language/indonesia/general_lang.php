@@ -18,3 +18,8 @@ $lang['lang_call_us_now'] = 'Hubungi Kami!';
 $lang['lang_email_us'] = 'E-mail Kami';
 $lang['lang_read_more'] = 'Baca Selengkapnya';
 $lang['lang_content_contact_us'] = 'Ceritakan masalah Anda, <br>dan kami akan menghubungi Anda untuk solusi terbaik!';
+
+$lang['lang_contact_fullname'] = 'Nama Lengkap';
+$lang['lang_contact_email'] = 'E-mail';
+$lang['lang_contact_whatsapp'] = 'Nomor Whatsapp';
+$lang['lang_contact_notes'] = 'Pesan';
