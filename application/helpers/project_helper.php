@@ -1281,14 +1281,14 @@ function sent_email_by_category($id_ref_email_category,$data,$to){
     $CI->load->helper('mail');
     $CI->load->model('emaildefaultmodel');
     $CI->load->model('emailtmpmodel');
-    $CI->load->model('contactusreceiveModel');
+    $CI->load->model('contactusreceivemodel');
 	$data_email_category = $CI->emaildefaultmodel->findById($id_ref_email_category);
 
     if($data_email_category['id_email_tmp']){
 
 
 	    $CI->db->select('group_concat(email) as email_group');
-		$add_email_to        = $CI->contactusreceiveModel->findBy(array('id_email_category' => $data_email_category['id'],'id_status_publish'=>2),1)['email_group'];
+		$add_email_to        = $CI->contactusreceivemodel->findBy(array('id_email_category' => $data_email_category['id'],'id_status_publish'=>2),1)['email_group'];
 		$add_email_to        = !empty($add_email_to) ? "," . $add_email_to : $add_email_to;
 		
 		$data_email_template = $CI->emailtmpmodel->findById($data_email_category['id_email_tmp']);
