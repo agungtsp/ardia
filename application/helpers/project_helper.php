@@ -1590,17 +1590,17 @@ function id_member(){
 function set_image_as_title_news($id_news){
     $CI=& get_instance();
     $CI->load->model('newsmodel');
-    $CI->load->model('filemanagerModel');
+    $CI->load->model('filemanagermodel');
     $news = $CI->newsmodel->findById($id_news);
     $news_ext = explode(".", $news['img']);
     $extension_img = '.'.$news_ext[1];
     $post_file['name'] = $news['uri_path'].$extension_img;
-    $check_image_exist = $CI->filemanagerModel->findBy(array('name'=>$post_file['name']));
+    $check_image_exist = $CI->filemanagermodel->findBy(array('name'=>$post_file['name']));
     if(!$check_image_exist and $news_ext[1] != ''){
 		$post['img'] = $news['uri_path'].$extension_img;
 		$CI->newsmodel->update($post,$id_news);
 		
-		$CI->filemanagerModel->insert($post_file);
+		$CI->filemanagermodel->insert($post_file);
 		
 		$fl = str_replace('//', '/', $path.'/'.$file);
 		

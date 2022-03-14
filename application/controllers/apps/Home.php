@@ -77,11 +77,11 @@ class Home extends CI_Controller {
 	        echo json_encode($ret);
 	        exit;
 		}
-		$this->load->model('fileManagerModel');
+		$this->load->model('filemanagermodel');
 		if($post['id']) { //delete image
-			$this->fileManagerModel->delete($post['id'], array('user_id_modify'=>id_user(),'modify_date'=>date('Y-m-d H:i:s')));
+			$this->filemanagermodel->delete($post['id'], array('user_id_modify'=>id_user(),'modify_date'=>date('Y-m-d H:i:s')));
 		}
-		$total_records = $this->fileManagerModel->getTotal("(user_id_create = ".id_user() ." or is_public = 1) and name LIKE '%".$post['searchPicture']."%' and create_date LIKE '%".$tglsearch."%'");
+		$total_records = $this->filemanagermodel->getTotal("(user_id_create = ".id_user() ." or is_public = 1) and name LIKE '%".$post['searchPicture']."%' and create_date LIKE '%".$tglsearch."%'");
 		$per_page = 12;
 		$data['pages'] = ceil($total_records/$per_page);
 		$data['load'] = base_url().'apps/home/imagemanager';
@@ -99,7 +99,7 @@ class Home extends CI_Controller {
 		$offset = (($page_number-1) * $per_page);
 
 
-		$data['list_data'] = $this->fileManagerModel->getAll("(user_id_create = ".id_user() ." or is_public = 1) and name LIKE '%".$post['searchPicture']."%' and create_date LIKE '%".$tglsearch."%'", $per_page, $offset);
+		$data['list_data'] = $this->filemanagermodel->getAll("(user_id_create = ".id_user() ." or is_public = 1) and name LIKE '%".$post['searchPicture']."%' and create_date LIKE '%".$tglsearch."%'", $per_page, $offset);
 		render('apps/filemanager',$data,'blank');
 
 	}
@@ -113,7 +113,7 @@ class Home extends CI_Controller {
 		rename($ori_tmp,$ori);
 		unset($post['tmp']);
 		$post['user_id_create'] = id_user();
-		$this->load->model('fileManagerModel');
-		$this->fileManagerModel->insert($post);
+		$this->load->model('filemanagermodel');
+		$this->filemanagermodel->insert($post);
 	}
 }
