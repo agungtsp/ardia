@@ -9,7 +9,7 @@
 				<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-default" data-click="panel-expand"><i class="fa fa-expand"></i></a>
 				<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
 			    </div>
-			    <h4 class="panel-title">{judul} Slideshow</h4>
+			    <h4 class="panel-title">{judul} Article</h4>
 			</div>
 			<div class="panel-body">
 				<div class="col-sm-12 col-lg-12 col-md-12">
@@ -39,24 +39,8 @@
 										<div class="col-md-9"><input type="text" value="{sub_title}" id="sub_title{nomor}" data-parsley-required="{validation}" class='form-control' name="sub_title[]"></div>
 									</div> -->
 									<div class="form-group  no-margin">
-										<label class="col-md-2 control-label">Order URL</label>
-										<div class="col-md-9"><input type="text" value="{url}" id="url{nomor}" class='form-control' name="url[]"></div>
-									</div>
-									<div class="form-group  no-margin">
-										<label class="col-md-2 control-label">&nbsp;</label>
-										<div class="col-md-9"><b>Example: https://www.google.com</b></div>
-									</div>
-									<div class="form-group  no-margin">
-										<label class="col-md-2 control-label">SKU</label>
-										<div class="col-md-9"><input type="text" value="{sku}" id="sku{nomor}" class='form-control' name="sku[]"></div>
-									</div>
-									<div class="form-group  no-margin">
-										<label class="col-md-2 control-label">Price</label>
-										<div class="col-md-9"><input type="text" value="{price}" id="price{nomor}" class='form-control' name="price[]"></div>
-									</div>
-									<div class="form-group  no-margin {invis}">
-										<label class="col-md-3 control-label">Is Featured<i class='req'>*</i></label>
-										<div class="col-md-9"><input type="checkbox" value="1" name="is_featured" id="is_featured" {checked_is_featured}> Featured </div>
+										<label class="col-md-2 control-label">Teaser</label>
+										<div class="col-md-9"><textarea  rows="4" id="teaser{nomor}" class="form-control" name="teaser[]">{teaser}</textarea></div>
 									</div>
 									<div class="form-group  no-margin">
 										<label class="col-md-2 control-label">Image <i class='req'>*</i></label>
@@ -68,6 +52,14 @@
 										</div>
 
 									</div>
+									<div class="form-group  no-margin">
+										<label class="col-md-2 control-label">Description  </label>
+										<div class="col-md-9"><textarea  rows="4" id="description{nomor}" class="form-control ckeditor" name="description[]">{description}</textarea></div>
+									</div>
+									<div class="form-group  no-margin {invis}">
+										<label class="col-md-2 control-label">Is Featured<i class='req'>*</i></label>
+										<div class="col-md-9"><input type="checkbox" value="1" name="is_featured" id="is_featured" {checked_is_featured}> Featured </div>
+									</div>
 									<div class="form-group  no-margin {invis}">
 										<label class="col-md-2 control-label">Publish Date </label>
 										<div class="col-md-9">
@@ -76,10 +68,6 @@
 												<span class="input-group-addon"><i class="fa fa-calendar"></i></span>
 											</div>
 									    </div>
-									</div>
-									<div class="form-group  no-margin">
-										<label class="col-md-2 control-label">Description  </label>
-										<div class="col-md-9"><textarea  rows="4" id="description{nomor}" class="form-control ckeditor" name="description[]">{description}</textarea></div>
 									</div>
 									<div class="form-group  no-margin {invis}">
 										<label class="col-md-2 control-label">Status <i class='req'>*</i></label>
