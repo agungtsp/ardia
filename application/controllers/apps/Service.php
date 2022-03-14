@@ -1,20 +1,20 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Product extends CI_Controller {
+class Service extends CI_Controller {
 	function __construct(){
 		parent::__construct();
-		$this->load->model('productmodel');
+		$this->load->model('servicemodel');
 		$this->load->model('languagemodel');
 	}
 	function index(){
 		$data['list_status_publish'] = selectlist2(array('table'=>'status_publish','title'=>'All Status','selected'=>$data['id_status_publish']));
-		render('apps/product/index',$data,'apps');
+		render('apps/service/index',$data,'apps');
 	}
 	
 	public function add($id=''){
 		if($id){
-			// $data = $this->productmodel->findById($id);
-			$datas 	= $this->productmodel->selectData($id);
+			// $data = $this->servicemodel->findById($id);
+			$datas 	= $this->servicemodel->selectData($id);
 
             if(!$datas){
 				die('404');
@@ -62,23 +62,23 @@ class Product extends CI_Controller {
 			$data['list_lang'][$key]['list_status_publish'] 	= selectlist2(array('table'=>'status_publish','title'=>'Select Status','selected'=>$datas[$key]['id_status_publish']));
 			
 			$img_thumb											= image($datas[$key]['img'],'small');
-			$imagemanager										= imagemanager('img',$img_thumb,350,300,$key);
+			$imagemanager										= imagemanager('img',$img_thumb,400,550,$key);
 			$data['list_lang'][$key]['img']						= $imagemanager['browse'];
 			$data['list_lang'][$key]['imagemanager_config']		= $imagemanager['config'];
 		}
 
 		$data['list_lang2']		= $data['list_lang'];
-		render('apps/product/add',$data,'apps');
+		render('apps/service/add',$data,'apps');
 	}
 
 	function records(){
-		$data = $this->productmodel->records();
+		$data = $this->servicemodel->records();
 		foreach ($data['data'] as $key => $value) {
 			$data['data'][$key]['title'] 	= quote_form($value['title']);
 			$data['data'][$key]['publish_date'] 	= iso_date($value['publish_date']);
 			$data['data'][$key]['approval_level'] 	= $approval;
 		}
-		render('apps/product/records',$data,'blank');
+		render('apps/service/records',$data,'blank');
 	}
 	
 	
@@ -109,7 +109,7 @@ class Product extends CI_Controller {
 				$data_save['sub_title'] 		= $post['sub_title'][$key];
 				$data_save['url'] 					= $post['url'][$key];
 				$data_save['publish_date']			= $publish_date;
-				$data_save['description'] 			= $post['description'][$key];
+				$data_save['description'] 			= htmlspecialchars_decode(urldecode($post['description'][$key]));
 				$data_save['price'] 			= $post['price'][$key];
 				$data_save['sku'] 			= $post['sku'][$key];
 				$data_save['is_featured'] 			= $is_featured;
@@ -121,7 +121,7 @@ class Product extends CI_Controller {
 				if($idedit && $post['img'][$key]){
 					$data_save['img']	= $post['img'][$key];
 				}elseif($idedit){
-					$datas 				= $this->productmodel->selectData($idedit);
+					$datas 				= $this->servicemodel->selectData($idedit);
 					$data_save['img']	= $datas[$key]['img'];
 				}else{
 					$data_save['img']	= $post['img'][$key];
@@ -131,19 +131,19 @@ class Product extends CI_Controller {
 					if($key==0){
 						auth_update();
 						$ret['message'] = 'Update Success';
-						$act			= "Update product";
-						$iddata 		= $this->productmodel->update($data_save,$idedit);
+						$act			= "Update service";
+						$iddata 		= $this->servicemodel->update($data_save,$idedit);
 					}else{
 						auth_update();
 						$ret['message'] = 'Update Success';
-						$act			= "Update product";
-						$iddata 		= $this->productmodel->updateKedua($data_save,$idedit);
+						$act			= "Update service";
+						$iddata 		= $this->servicemodel->updateKedua($data_save,$idedit);
 					}
 				}else{
 					auth_insert();
 					$ret['message'] = 'Insert Success';
-					$act			= "Insert product";
-					$iddata 		= $this->productmodel->insert($data_save);
+					$act			= "Insert service";
+					$iddata 		= $this->servicemodel->insert($data_save);
 				}
 
 				if($key==0){
@@ -160,12 +160,12 @@ class Product extends CI_Controller {
 	function del(){
 		$this->db->trans_start();   
 		$id = $this->input->post('iddel');
-		$this->productmodel->delete($id);
-		$this->productmodel->delete2($id);
+		$this->servicemodel->delete($id);
+		$this->servicemodel->delete2($id);
 		$this->db->trans_complete();
 	}
 	
 }
 
-/* End of file product.php */
-/* Location: ./application/controllers/apps/product.php */
+/* End of file service.php */
+/* Location: ./application/controllers/apps/service.php */

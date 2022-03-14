@@ -9,7 +9,7 @@
 				<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-default" data-click="panel-expand"><i class="fa fa-expand"></i></a>
 				<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
 			    </div>
-			    <h4 class="panel-title">{judul} Product</h4>
+			    <h4 class="panel-title">{judul} Slideshow</h4>
 			</div>
 			<div class="panel-body">
 				<div class="col-sm-12 col-lg-12 col-md-12">
@@ -39,7 +39,7 @@
 										<div class="col-md-9"><input type="text" value="{sub_title}" id="sub_title{nomor}" data-parsley-required="{validation}" class='form-control' name="sub_title[]"></div>
 									</div> -->
 									<div class="form-group  no-margin">
-										<label class="col-md-2 control-label">Order URL</label>
+										<label class="col-md-2 control-label">Apply Url</label>
 										<div class="col-md-9"><input type="text" value="{url}" id="url{nomor}" class='form-control' name="url[]"></div>
 									</div>
 									<div class="form-group  no-margin">
@@ -47,12 +47,20 @@
 										<div class="col-md-9"><b>Example: https://www.google.com</b></div>
 									</div>
 									<div class="form-group  no-margin">
-										<label class="col-md-2 control-label">SKU</label>
-										<div class="col-md-9"><input type="text" value="{sku}" id="sku{nomor}" class='form-control' name="sku[]"></div>
+										<label class="col-md-2 control-label">Departement</label>
+										<div class="col-md-9"><input type="text" value="{departement}" id="departement{nomor}" class='form-control' name="departement[]"></div>
 									</div>
 									<div class="form-group  no-margin">
-										<label class="col-md-2 control-label">Price</label>
-										<div class="col-md-9"><input type="text" value="{price}" id="price{nomor}" class='form-control' name="price[]"></div>
+										<label class="col-md-2 control-label">Type</label>
+										<div class="col-md-9"><input type="text" value="{type}" id="type{nomor}" class='form-control' name="type[]"></div>
+									</div>
+									<div class="form-group  no-margin">
+										<label class="col-md-2 control-label">Location</label>
+										<div class="col-md-9"><input Location="text" value="{location}" id="location{nomor}" class='form-control' name="location[]"></div>
+									</div>
+									<div class="form-group  no-margin">
+										<label class="col-md-2 control-label">Salary Range</label>
+										<div class="col-md-9"><input Location="text" value="{salary_range}" id="salary_range{nomor}" class='form-control' name="salary_range[]"></div>
 									</div>
 									<div class="form-group  no-margin {invis}">
 										<label class="col-md-3 control-label">Is Featured<i class='req'>*</i></label>

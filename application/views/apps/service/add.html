@@ -9,7 +9,7 @@
 				<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-default" data-click="panel-expand"><i class="fa fa-expand"></i></a>
 				<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
 			    </div>
-			    <h4 class="panel-title">{judul} Product</h4>
+			    <h4 class="panel-title">{judul} Service</h4>
 			</div>
 			<div class="panel-body">
 				<div class="col-sm-12 col-lg-12 col-md-12">
@@ -33,36 +33,11 @@
 									<div class="form-group  no-margin">
 										<label class="col-md-2 control-label">Title <i class='req'>*</i></label>
 										<div class="col-md-9"><input type="text" value="{title}" id="title{nomor}" data-parsley-required="{validation}" class='form-control' name="title[]"></div>
-									</div>
-									<!-- <div class="form-group  no-margin">
-										<label class="col-md-2 control-label">Sub Title</label>
-										<div class="col-md-9"><input type="text" value="{sub_title}" id="sub_title{nomor}" data-parsley-required="{validation}" class='form-control' name="sub_title[]"></div>
-									</div> -->
-									<div class="form-group  no-margin">
-										<label class="col-md-2 control-label">Order URL</label>
-										<div class="col-md-9"><input type="text" value="{url}" id="url{nomor}" class='form-control' name="url[]"></div>
-									</div>
-									<div class="form-group  no-margin">
-										<label class="col-md-2 control-label">&nbsp;</label>
-										<div class="col-md-9"><b>Example: https://www.google.com</b></div>
-									</div>
-									<div class="form-group  no-margin">
-										<label class="col-md-2 control-label">SKU</label>
-										<div class="col-md-9"><input type="text" value="{sku}" id="sku{nomor}" class='form-control' name="sku[]"></div>
-									</div>
-									<div class="form-group  no-margin">
-										<label class="col-md-2 control-label">Price</label>
-										<div class="col-md-9"><input type="text" value="{price}" id="price{nomor}" class='form-control' name="price[]"></div>
-									</div>
-									<div class="form-group  no-margin {invis}">
-										<label class="col-md-3 control-label">Is Featured<i class='req'>*</i></label>
-										<div class="col-md-9"><input type="checkbox" value="1" name="is_featured" id="is_featured" {checked_is_featured}> Featured </div>
-									</div>
-									<div class="form-group  no-margin">
+									</div>									<div class="form-group  no-margin">
 										<label class="col-md-2 control-label">Image <i class='req'>*</i></label>
 										<div class="col-md-9">
 											{img}
-											<div style="color: green">Size : 350px  x 300px</div><br/>
+											<div style="color: green">Size : 400px  x 550px</div><br/>
 											<a style="cursor: pointer;" onclick="delImage('{nomor}', '{base_url}')">Delete Image</a>
 											<input type="hidden" name="imgDelete[]" id="imgDelete{nomor}" value="0">
 										</div>
@@ -103,6 +78,6 @@
 	</div>
 </div>
 <style type="text/css">
-	.browse-image{width: 100% !important;height: 300px !important;}
+	.browse-image{width: 100% !important;height: 550px !important;}
 	.browse-image img{width: initial !important; margin-top: -12px !important;}
 </style>

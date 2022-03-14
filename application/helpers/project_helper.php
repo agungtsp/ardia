@@ -1026,23 +1026,11 @@ function getParentMenu($parent=''){
 	$CI 		= & get_instance();
 	$id_lang 	= id_lang();
 	$CI->load->model('frontendmenumodel');
-	$CI->load->model('newscategorymodel');
 	$uri4		= $CI->uri->segment(4);
 	$uri3		= $CI->uri->segment(3);
 	$uri2		= $CI->uri->segment(2);
 	$uri1		= $CI->uri->segment(1);
 	$where = array();
-	if($uri2 == 'news'){
-		$CI->load->model('newsmodel');
-		$where2['a.uri_path'] 	= $uri4;
-		$where2['a.id_lang'] 	= $id_lang;
-		$data		 			= $CI->newsmodel->fetchRow($where2);
-		// print_r($data);
-		// echo $CI->db->last_query();exit;
-		$newsCat	 			= $CI->newscategorymodel->findById($data['id_news_category']);
-		// print_r($newsCat);exit;
-		$uri3		 			= $newsCat['uri_path'];
-	}
 
 	$CI->db->order_by('id_parent','desc');
 	$where['id_language'] = $id_lang;

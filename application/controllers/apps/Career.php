@@ -1,20 +1,20 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Product extends CI_Controller {
+class Career extends CI_Controller {
 	function __construct(){
 		parent::__construct();
-		$this->load->model('productmodel');
+		$this->load->model('careermodel');
 		$this->load->model('languagemodel');
 	}
 	function index(){
 		$data['list_status_publish'] = selectlist2(array('table'=>'status_publish','title'=>'All Status','selected'=>$data['id_status_publish']));
-		render('apps/product/index',$data,'apps');
+		render('apps/career/index',$data,'apps');
 	}
 	
 	public function add($id=''){
 		if($id){
-			// $data = $this->productmodel->findById($id);
-			$datas 	= $this->productmodel->selectData($id);
+			// $data = $this->careermodel->findById($id);
+			$datas 	= $this->careermodel->selectData($id);
 
             if(!$datas){
 				die('404');
@@ -27,9 +27,10 @@ class Product extends CI_Controller {
 			$data['judul']				= 'Add';
 			$data['proses']				= 'Simpan';
 			$data['title']	= '';
-			$data['sub_title']	= '';
-			$data['price']	= '';
-			$data['sku']	= '';
+			$data['salary_range']	= '';
+			$data['departement']	= '';
+			$data['location']	= '';
+			$data['type']	= '';
 			// $data['description2']		= '';
 			$data['background']			= '';
 			$data['color']				= '';
@@ -49,9 +50,10 @@ class Product extends CI_Controller {
 			$data['list_lang'][$key]['nomor']			= $key;
 			$data['list_lang'][$key]['checked_is_featured']      = ($datas[$key]['is_featured']==1)?"checked":'';
 			$data['list_lang'][$key]['title'] 		= $datas[$key]['title'];
-			$data['list_lang'][$key]['sub_title'] 		= $datas[$key]['sub_title'];
-			$data['list_lang'][$key]['sku'] 		= $datas[$key]['sku'];
-			$data['list_lang'][$key]['price'] 		= $datas[$key]['price'];
+			$data['list_lang'][$key]['salary_range'] 		= $datas[$key]['salary_range'];
+			$data['list_lang'][$key]['departement'] 		= $datas[$key]['departement'];
+			$data['list_lang'][$key]['location'] 		= $datas[$key]['location'];
+			$data['list_lang'][$key]['type'] 		= $datas[$key]['type'];
 			$data['list_lang'][$key]['url'] 					= $datas[$key]['url'];
 			$data['list_lang'][$key]['publish_date'] 			= iso_date($datas[$key]['publish_date']);
 			$data['list_lang'][$key]['description'] 			= $datas[$key]['description'];
@@ -68,17 +70,17 @@ class Product extends CI_Controller {
 		}
 
 		$data['list_lang2']		= $data['list_lang'];
-		render('apps/product/add',$data,'apps');
+		render('apps/career/add',$data,'apps');
 	}
 
 	function records(){
-		$data = $this->productmodel->records();
+		$data = $this->careermodel->records();
 		foreach ($data['data'] as $key => $value) {
 			$data['data'][$key]['title'] 	= quote_form($value['title']);
 			$data['data'][$key]['publish_date'] 	= iso_date($value['publish_date']);
 			$data['data'][$key]['approval_level'] 	= $approval;
 		}
-		render('apps/product/records',$data,'blank');
+		render('apps/career/records',$data,'blank');
 	}
 	
 	
@@ -106,12 +108,13 @@ class Product extends CI_Controller {
 				}
 
 				$data_save['title'] 		= $post['title'][$key];
-				$data_save['sub_title'] 		= $post['sub_title'][$key];
+				$data_save['salary_range'] 		= $post['salary_range'][$key];
 				$data_save['url'] 					= $post['url'][$key];
 				$data_save['publish_date']			= $publish_date;
 				$data_save['description'] 			= $post['description'][$key];
-				$data_save['price'] 			= $post['price'][$key];
-				$data_save['sku'] 			= $post['sku'][$key];
+				$data_save['location'] 			= $post['location'][$key];
+				$data_save['departement'] 			= $post['departement'][$key];
+				$data_save['type'] 			= $post['type'][$key];
 				$data_save['is_featured'] 			= $is_featured;
 				$data_save['id_status_publish'] 	= $id_status_publish;
 				$data_save['id_lang'] 				= $post['id_lang'][$key];
@@ -121,7 +124,7 @@ class Product extends CI_Controller {
 				if($idedit && $post['img'][$key]){
 					$data_save['img']	= $post['img'][$key];
 				}elseif($idedit){
-					$datas 				= $this->productmodel->selectData($idedit);
+					$datas 				= $this->careermodel->selectData($idedit);
 					$data_save['img']	= $datas[$key]['img'];
 				}else{
 					$data_save['img']	= $post['img'][$key];
@@ -131,19 +134,19 @@ class Product extends CI_Controller {
 					if($key==0){
 						auth_update();
 						$ret['message'] = 'Update Success';
-						$act			= "Update product";
-						$iddata 		= $this->productmodel->update($data_save,$idedit);
+						$act			= "Update career";
+						$iddata 		= $this->careermodel->update($data_save,$idedit);
 					}else{
 						auth_update();
 						$ret['message'] = 'Update Success';
-						$act			= "Update product";
-						$iddata 		= $this->productmodel->updateKedua($data_save,$idedit);
+						$act			= "Update career";
+						$iddata 		= $this->careermodel->updateKedua($data_save,$idedit);
 					}
 				}else{
 					auth_insert();
 					$ret['message'] = 'Insert Success';
-					$act			= "Insert product";
-					$iddata 		= $this->productmodel->insert($data_save);
+					$act			= "Insert career";
+					$iddata 		= $this->careermodel->insert($data_save);
 				}
 
 				if($key==0){
@@ -160,12 +163,12 @@ class Product extends CI_Controller {
 	function del(){
 		$this->db->trans_start();   
 		$id = $this->input->post('iddel');
-		$this->productmodel->delete($id);
-		$this->productmodel->delete2($id);
+		$this->careermodel->delete($id);
+		$this->careermodel->delete2($id);
 		$this->db->trans_complete();
 	}
 	
 }
 
-/* End of file product.php */
-/* Location: ./application/controllers/apps/product.php */
+/* End of file career.php */
+/* Location: ./application/controllers/apps/career.php */

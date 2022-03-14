@@ -1,7 +1,7 @@
 <?php
-class productmodel extends  CI_Model{
-	var $table = 'product';
-	var $tableAs = 'product a';
+class careermodel extends  CI_Model{
+	var $table = 'career';
+	var $tableAs = 'career a';
     function __construct(){
        parent::__construct();
        $this->load->model('model_user');
@@ -22,10 +22,10 @@ class productmodel extends  CI_Model{
 		$this->db->select("a.*,c.name as status,d.username, x.title as title_e");
 		$this->db->where('a.is_delete',0);
 		$this->db->where('a.id_parent_lang is null');
-		// $this->db->where('a.id_product_position = 0');
+		// $this->db->where('a.id_career_position = 0');
 		$this->db->join('status_publish c',"c.id = a.id_status_publish",'left');
 		$this->db->join('auth_user d',"d.id_auth_user = a.user_id_create",'left');
-		$this->db->join('product x',"x.id_parent_lang = a.id",'left');
+		$this->db->join('career x',"x.id_parent_lang = a.id",'left');
 		
 		$query = $this->db->get($this->tableAs);
 		if($isTotal==0){

@@ -102,38 +102,14 @@ function render($view,$data='',$layout="", $ret=false){
 	$uri1 		= $CI->uri->segment(1);
 	$uri2 		= $CI->uri->segment(2);
 	$uri3 		= $CI->uri->segment(3);
-
-	$pages = $CI->db->get_where("pages", array("uri_path"=>$uri3))->row_array();
-	if($pages){
-		$data['pages_content'] 	= $pages['page_content'];
-		$data['pages_img'] 		= image($pages['img'],'large');
-	} else{
-		$data['pages_content'] 	= '';
-		$data['pages_img'] 		= '';
-	}
+	
 
 	$data['base_url'] = $CI->baseUrl;
 	$data['lang'] = $CI->uri->segment(1);
 	if(!$data['js_file']){
 		$data['js_file'] = '';
 	}
-	if(!isset($data['slider_widget'])){
-		$data['slider_widget'] = '';
-	}
 
-	if(!isset($data['popular_article'])){
-		$data['popular_article'] = '';
-	}
-
-	if(!isset($data['meta'])){
-		$data['meta'] = '';
-	}
-	if(!$data['qa_widget']){
-		$data['qa_widget'] = '';
-	}
-	if(!$data['qa_widget_mobile']){
-		$data['qa_widget_mobile'] = '';
-	}
 	$data['base_url_lang'] 	 	 = base_url_lang()."/";
 	$data['breadcrumb']          = $data['lang'] == 'apps' ? breadcrumb() : breadcrumb2();
 	$CI->breadcrumb              = $data['breadcrumb'];
@@ -141,16 +117,9 @@ function render($view,$data='',$layout="", $ret=false){
 	// print_r($data['breadcrumb_frontend']);exit;
 	$data['hide_banner_bottom'] = $data['hide_banner_bottom']? $data['hide_banner_bottom'] : '';
 	$data['app_name']           = APP_NAME;
-	$data['partner_menu']       = partner_menu();
 	$data['header_menu']        = header_menu();
 	$data['footer_menu']        = footer_menu();
-	$data['banner_bottom']      = banner_bottom();
-	// $data['logo'][]             = get_logo();
-	// $data['logo_footer'][]      = get_logo();
-	// $data['footer_data'][]      = get_footer_data();
-	$data['top_menu']           = top_menu();
 	$data['language']           = LANGUAGE;
-	$data['top_menu_mobile']    = top_menu_mobile();
 	$data['this_year']          = date('Y');
 	$data['minify']             = minify();
 	$data['signin']             = '';
@@ -168,43 +137,17 @@ function render($view,$data='',$layout="", $ret=false){
 			$CI->load->model('loginmodel');
 			$CI->loginmodel->remember_me_login();
 		}
-		$data['member_namadepan']    = $user_sess_data['member_namadepan'];
-		$data['member_namabelakang'] = $user_sess_data['member_namabelakang'];
-		$data['signin']              = 'hide';
-		$data['signout']             = '';
 	}
 
-	$CI->load->model('pagesmodel');
-	$langSelected 		= $CI->languagemodel->fetchRow(array("code"=>$data['lang']));
-	if($langSelected['id'] == 1){
-		$idPrivacy = 17;
-	} else{
-		$idPrivacy = 18;
-	}
-	$dataPrivacy 		= $CI->pagesmodel->fetchRow(array("id" => $idPrivacy));
-	$data['privacy_teaser'] = $dataPrivacy['teaser'];
-	$data['privacy_title'] = $dataPrivacy['page_name'];
-	$data['privacy_url'] = base_url().$data['lang']."/pages/".$dataPrivacy['uri_path'];
-
-	/*new script (dwiki)*/
 	if(!$data['head_title']){
-		$data['head_title']= 'AmCham Indonesia, MJM since 1971';
+		$data['head_title']= 'ARDIA PERDANA';
 	}
 	if(!$data['meta_description']){
-		$data['meta_description']= 'AmCham Indonesia, MJM since 1971';
+		$data['meta_description']= 'ARDIA PERDANA';
 	}
 	if(!$data['meta_keywords']){
-		$data['meta_keywords']= 'AmCham';
+		$data['meta_keywords']= 'ARDIA PERDANA';
 	}
-
-	$data['meta_img'] = $data['share'] ?  $data['meta_img'] :site_url('/asset/images/logo_sosmed.jpg') ;
-	if ($data['meta_img']== '') {
-		$data['meta_img'] = 'https://amcham.or.id/asset/images/logo-share-linkedin.jpeg';
-	} else {
-		$data['meta_img'] = $data['meta_img'];
-	}
-	$data['meta_og'] = meta_og($data);
-	/*end new script (dwiki)*/
 
 	$data['head_title'] = head_title($head_title);
 	$data['meta_description_general'] = meta_description($data['meta_description_general']);
