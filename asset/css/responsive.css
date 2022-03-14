@@ -92,8 +92,52 @@
 	.c-coll h3 {
 		font-size: 24px;
 	}
+	.r-act-btn .btn-orange,
+	.r-act-btn .btn-orange-outline {
+		padding: 15px;
+		font-size: 20px;
+	}
+	.r-act-btn .btn-orange img {
+		width: 50px;
+		margin: 0;
+	}
+	.r-act-btn .btn-orange span.f-14 {
+		font-size: 10px;
+	}
+	.r-act-btn .btn-orange-outline svg {
+		width: 50px;
+		height: 35px;
+	}
+	.col-form {
+		padding-right: 50px;
+	}
+	.col-articles {
+		padding-left: 12.5px;
+		padding-right: 30px;
+	}
+	.desc-articles {
+		padding-left: 25px;
+		padding-right: 25px;
+	}
+	.articles-dtl {
+		padding-bottom: 50px;
+		padding-top: 142px;
+	}
+	.act-btn .btn-outline-primary {
+		margin-right: 0;
+		width: auto;
+	}
+	.col-dtl {
+		padding-left: 12.5px;
+	}
 }
 @media screen and (max-width: 767px) {
+	.col-articles {
+		padding-right: 12.5px;
+	}
+	.col-form {
+		padding-right: 12.5px;
+	}
 	.banner-page {
 		padding-top: 122px;
 	}
@@ -118,9 +162,6 @@
 		padding-bottom: 0;
 		padding-left: 20px;
 		padding-right: 20px;
-	}
-	.top-header .d-flex.w-100 span:first-child {
-		display: none !important;
 	}
 	.logo img {
 		height: 40px;
@@ -216,8 +257,109 @@
 		right: 20px;
 		bottom: 15px;
 	}
+	.r-act-btn {
+		margin-top: 30px;
+	}
+	.stick {
+		position: relative;		
+	}
+	.r-act-btn .btn {
+	    margin-bottom: 15px !important;
+	}
+	.contact-form h4 {
+		margin-bottom: 30px !important; 
+		font-size: 18px;
+	}
+	.col-articles .c-latest {
+		margin-bottom: 20px;
+	}
+	.intro-dtl {
+		font-size: 24px;
+		padding: 20px 30px;
+	}
+	.desc-articles {
+		padding-left: 12.5px;
+		padding-right: 12.5px;
+	}
+	.desc-articles h2 {
+		font-size: 26px;
+	}
+	.row-about {
+		margin-bottom: 30px;
+	}
+	.row-about img {
+		margin-bottom: 20px;
+	}
+	.row-about p {
+		font-size: 18px;
+	}
+	.line-intro {
+		margin-bottom: 50px;
+	}
+	.row-about h3 {
+		margin-bottom: 15px;
+	}
+	.services-dtl {
+		display: block;
+	}
+	.services-dtl .thumb {
+		max-width: 100%;
+		margin-bottom: 20px;
+		min-width: none;
+	} 
+	.services-dtl .desc {
+		padding-left: 0;
+	}
+	.mb-30-m {
+		margin-bottom: 30px !important;
+	}
+	.pt-30-m {
+		padding-top: 30px !important;
+	}
+	.list-careers .desc {
+		display: block;	
+	}
+	.act-btn {
+		margin-top: 10px;
+	}
+	.act-btn .btn-outline-primary {
+		line-height: normal;
+		padding: 5px 50px !important;
+		font-size: 14px;
+	}
+	.list-careers h3 {
+		font-size: 24px;
+	}
+	.list-careers .desc ul li, .list-careers .salary {
+		font-size: 14px;
+	}
+	.pagination .page-link {
+		font-size: 16px;
+	}
+	.pagination .page-item {
+		padding-left: 5px;
+		padding-right: 5px;
+	}
 }
 @media screen and (max-width: 575px) {
+	.row-about p {
+		font-size: 16px;
+	}
+	.line-intro,
+	.row-about h3 {
+		font-size: 20px;
+	}
+	.desc-articles {
+		padding-left: 0;
+		padding-right: 0;
+	}
+	.desc-articles h2 {
+		font-size: 24px;
+	}
+	.intro-dtl {
+	    font-size: 18px;
+	    padding: 15px 20px;
+	}
 	.thumb-rec {
 		min-height: 300px;
 	}
@@ -344,6 +486,36 @@
 	.share-dtl a {
 		margin-right: 2px;
 	}
+	.col-articles .c-latest .btn-outline-primary {
+		width: 100%;
+	}
+	.top-header span {
+		margin-right: 15px;
+	}
+	.list-careers .desc {
+		padding-left: 20px;
+	}
+	.list-careers h3 {
+		font-size: 18px;
+	}
+	.list-careers .thumb {
+		width: 150px;
+	}
+	.list-careers .thumb img {
+		height: 100%;
+		width: auto;
+	}
+	.title-404 {
+		font-size: 100px;
+	}
+	.subtitle-404 {
+		font-size: 24px;
+	}
+}
+@media screen and (max-width: 400px) {
+	.top-header span:first-child {
+		display: none !important;
+	}
 }
 @media screen and (max-width: 340px) {
 	header .navbar-collapse {
@@ -351,5 +523,15 @@
 	}
 	.title-sec {
 		font-size: 28px;
+	}
+	.list-careers .desc ul li, .list-careers .salary, .act-btn .btn-outline-primary {
+		font-size: 12px;
+	}
+	.title-404 {
+		font-size: 75px;
+		line-height: 75px;
+	}
+	.subtitle-404 {
+		font-size: 18px;
 	}
 }
