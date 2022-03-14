@@ -3,7 +3,7 @@
 class email_tpt extends CI_Controller {
 	function __construct(){
 		parent::__construct();
-		$this->load->model('EmailTmpModel');
+		$this->load->model('emailtmpmodel');
 		$this->load->model('languagemodel');
 	}
 	function index(){
@@ -13,8 +13,8 @@ class email_tpt extends CI_Controller {
 	}
 	public function add($id=''){
 		if($id){
-			// $data = $this->EmailTmpModel->findById($id);
-			$datas 	= $this->EmailTmpModel->selectData($id);
+			// $data = $this->emailtmpmodel->findById($id);
+			$datas 	= $this->emailtmpmodel->selectData($id);
 
             if(!$datas){
 				die('404');
@@ -62,7 +62,7 @@ class email_tpt extends CI_Controller {
 	render('apps/email_tmp/add',$data,'apps');
 	}
 	function records(){
-		$data = $this->EmailTmpModel->records();
+		$data = $this->emailtmpmodel->records();
 		// echo $this->db->last_query();
 		foreach ($data['data'] as $key => $value) {
 			$data['data'][$key]['slideshow_title'] 		= quote_form($value['slideshow_title']);
@@ -122,18 +122,18 @@ class email_tpt extends CI_Controller {
 						auth_update();
 						$ret['message'] = 'Update Success';
 						$act			= "Update Email Template";
-						$iddata 		= $this->EmailTmpModel->update($data_save,$idedit,$idLang);
+						$iddata 		= $this->emailtmpmodel->update($data_save,$idedit,$idLang);
 					}else{
 						auth_update();
 						$ret['message'] = 'Update Success';
 						$act			= "Update Email Template";
-						$iddata			= $this->EmailTmpModel->updateKedua($data_save,$idedit,$idLang);
+						$iddata			= $this->emailtmpmodel->updateKedua($data_save,$idedit,$idLang);
 					}
 				}else{
 					auth_insert();
 					$ret['message'] = 'Insert Success';
 					$act			= "Insert News";
-					$iddata 		= $this->EmailTmpModel->insert($data_save,$idLang);
+					$iddata 		= $this->emailtmpmodel->insert($data_save,$idLang);
 				}
 
 				if($key==0){
@@ -150,8 +150,8 @@ class email_tpt extends CI_Controller {
 	function del(){
 		$this->db->trans_start();   
 		$id = $this->input->post('iddel');
-		$this->EmailTmpModel->delete($id);
-		$this->EmailTmpModel->delete2($id);
+		$this->emailtmpmodel->delete($id);
+		$this->emailtmpmodel->delete2($id);
 		$this->db->trans_complete();
 	}
 	

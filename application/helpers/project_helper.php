@@ -1279,10 +1279,10 @@ function meta_keywords($meta=''){
 function sent_email_by_category($id_ref_email_category,$data,$to){
     $CI=& get_instance();
     $CI->load->helper('mail');
-    $CI->load->model('EmailDefaultModel');
-    $CI->load->model('EmailTmpModel');
+    $CI->load->model('emaildefaultmodel');
+    $CI->load->model('emailtmpmodel');
     $CI->load->model('contactusreceiveModel');
-	$data_email_category = $CI->EmailDefaultModel->findById($id_ref_email_category);
+	$data_email_category = $CI->emaildefaultmodel->findById($id_ref_email_category);
 
     if($data_email_category['id_email_tmp']){
 
@@ -1291,7 +1291,7 @@ function sent_email_by_category($id_ref_email_category,$data,$to){
 		$add_email_to        = $CI->contactusreceiveModel->findBy(array('id_email_category' => $data_email_category['id'],'id_status_publish'=>2),1)['email_group'];
 		$add_email_to        = !empty($add_email_to) ? "," . $add_email_to : $add_email_to;
 		
-		$data_email_template = $CI->EmailTmpModel->findById($data_email_category['id_email_tmp']);
+		$data_email_template = $CI->emailtmpmodel->findById($data_email_category['id_email_tmp']);
 		
         if($data_email_template){
             $email['to'] = $to.$add_email_to;
@@ -1319,7 +1319,7 @@ function sent_email_by_category($id_ref_email_category,$data,$to){
 			$data_email['category']     = $data_email_category['name'];
 			$data_email['process_date'] = date('Y-m-d H:i:s');
 			$data_email['from_email']   = $CI->db->query('select smtp_user from email_config')->row()->smtp_user;
-            // $log_email = $CI->EmailDefaultModel->insert_email_log($data_email);
+            // $log_email = $CI->emaildefaultmodel->insert_email_log($data_email);
             return $ret;
         }else{
         	// print_r($data_email_category);
