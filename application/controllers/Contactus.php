@@ -104,33 +104,18 @@ class Contactus extends CI_Controller {
 
     		$data['page_content'] = $this->parser->parse("layout/ddi/contact_us_form.html",$this->data,true); 
 
-
-
     		$data['hide_breadcrumb'] = 'hidden';
 
     		$data['page_name'] = 'Contact Us';
 
-
-
     		if($data['seo_title'] == ''){
 
     		    $data['seo_title'] = "ARDIA PERDANA";
-
     		}
-
-
-
-    		$data['amcham_committe_list'] = '';
 
     		$data['meta_description'] = preg_replace('/<[^>]*>/', '', $data['meta_description']);
 
-    		$data['banner_top']       = banner_top();
-
-    		$data['widget_sidebar']   = widget_sidebar();
-
-
 			$data['active_contactus'] = 'active';
-
     		render('contactus',$data); 
 
     	}
