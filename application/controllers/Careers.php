@@ -26,6 +26,17 @@ class Careers extends CI_Controller
         $data["active_careers"] = "active";
 
         $filter_career['id_lang'] = $id_lang;
+        $sort = $_GET['sort'];
+        if($sort==3){
+            $data['selected_3'] = 'selected';
+            $this->db->order_by('a.title','desc');
+        } else if($sort==2){
+            $data['selected_2'] = 'selected';
+            $this->db->order_by('a.title','asc');
+        } else {
+            $data['selected_1'] = 'selected';
+            $this->db->order_by('a.id','desc');
+        }
         $data['list_careers'] = $this->careermodel->findBy($filter_career);	
         foreach ($data['list_careers'] as $key => $value) {
             $data['list_careers'][$key]['img'] = getImgLink($value['img'], 'large');

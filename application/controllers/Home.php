@@ -35,6 +35,7 @@ class Home extends CI_Controller
         $filter_product['id_lang'] = $id_lang;
         $filter_product['is_featured'] = 1;
         $this->db->limit(3);
+        $this->db->order_by('a.id','desc');
         $data['list_product'] = $this->productmodel->findBy($filter_product);	
         foreach ($data['list_product'] as $key => $value) {
             $data['list_product'][$key]['img'] = getImgLink($value['img'], 'large');

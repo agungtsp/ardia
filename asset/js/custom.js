@@ -27,3 +27,8 @@ $("#contact_us_btn").click(function(){
         })
     }
 });
+
+$('select#sort').change(function () {
+    var optionSelected = $(this).find("option:selected").val();
+    window.location = window.location.href.split('?')[0] + "?sort="+optionSelected
+});
