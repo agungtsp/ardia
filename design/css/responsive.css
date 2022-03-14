@@ -210,11 +210,11 @@
 		padding-left: 15px;
 	}
 	.c-coll {
-		margin-bottom: 0;
+		/*margin-bottom: 0;*/
 		padding: 20px;
 	}
 	.item-product {
-		margin-bottom: 20px;
+		margin-bottom: 0;
 	}
 	.c-coll .thumb {
 		height: auto;
