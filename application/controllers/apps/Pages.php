@@ -91,8 +91,8 @@ class Pages extends CI_Controller {
 		$id_parent_lang 		= NULL;
 		$this->db->trans_start();
 
-		foreach ($post['title'] as $key => $value){
-			$this->form_validation->set_rules('title[0]', '"Title"', 'required'); 
+		foreach ($post['sub_title'] as $key => $value){
+			$this->form_validation->set_rules('sub_title[0]', '"Title"', 'required'); 
 			if ($this->form_validation->run() == FALSE){
 				$ret['message']  = validation_errors(' ',' ');
 			}else{
@@ -106,7 +106,7 @@ class Pages extends CI_Controller {
 				 	$id_status_publish	= $post['id_status_publish'][$key];
 				}
 
-				$data_save['title'] 		= $post['title'][$key];
+				// $data_save['title'] 		= $post['title'][$key];
 				$data_save['teaser'] 		= $post['teaser'][$key];
 				$data_save['sub_title'] 		= $post['sub_title'][$key];
 				$data_save['uri_path'] 		= $post['uri_path'][$key];

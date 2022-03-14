@@ -3,18 +3,20 @@
     <div class="owl-carousel owl-theme owl-index" id="slide-index">
         {list_slideshow}
         <div class="item">
-          <div class="item-slide container">
-            <div class="desc-slide">
-              <div class="text-desc">
-                <div class="td wow zoomIn" data-wow-duration=".5s">
-                  <span class="wow" data-wow-duration=".3s">{slideshow_sub_title}</span>
-                  <h2 class="wow" data-wow-duration=".6s">{slideshow_title}</h2>
-                  <p class="wow mb-0" data-wow-duration=".9s">{description}</p>
+          <a href="{url}">
+            <div class="item-slide container">
+              <div class="desc-slide">
+                <div class="text-desc">
+                  <div class="td wow zoomIn" data-wow-duration=".5s">
+                    <span class="wow" data-wow-duration=".3s">{slideshow_sub_title}</span>
+                    <h2 class="wow" data-wow-duration=".6s">{slideshow_title}</h2>
+                    <p class="wow mb-0" data-wow-duration=".9s">{description}</p>
+                  </div>
                 </div>
+                <div class="img-desc"><img src="{img}" alt="" class="wow fadeInRight" data-wow-duration="2s"></div>
               </div>
-              <div class="img-desc"><img src="{img}" alt="" class="wow fadeInRight" data-wow-duration="2s"></div>
             </div>
-          </div>
+          </a>
         </div>
         {/list_slideshow}
     </div>

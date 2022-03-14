@@ -10,3 +10,6 @@ label.parsley-errors-list>span {
   margin: 0;
   color: #bf0b1c;
 }
+.owl-item .item a{
+  text-decoration: none;
+}
