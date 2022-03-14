@@ -52,7 +52,7 @@ class email_tpt extends CI_Controller {
 			$data['list_lang'][$key]['list_status_publish'] 	= selectlist2(array('table'=>'status_publish','title'=>'Select Status','selected'=>$datas[$key]['id_status_publish']));
 			$data['list_lang'][$key]['list_ref_email_category'] = selectlist2(array('table'=>'ref_email_category','title'=>'All Category','selected'=>$datas[$key]['id_ref_email_category']));
 			
-	        $img_thumb											= image($datas[$key]['img'],'small');//is_file_exsist(UPLOAD_DIR.'small/',$data['img']) ? ($this->baseUrl.'uploads/small/'.$data['img']) : '';
+	        $img_thumb											= image($datas[$key]['img'],'large');//is_file_exsist(UPLOAD_DIR.'small/',$data['img']) ? ($this->baseUrl.'uploads/small/'.$data['img']) : '';
 			$imagemanager										= imagemanager('img',$img_thumb,750,186,$key);
 			$data['list_lang'][$key]['img']						= $imagemanager['browse'];
 			$data['list_lang'][$key]['imagemanager_config'] 	= $imagemanager['config'];

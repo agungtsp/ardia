@@ -104,7 +104,7 @@ class servicemodel extends  CI_Model{
 		$where['a.is_delete'] = 0;
 		$where['a.id_status_publish'] = 2;
 		$this->db->select('a.*');
-		$this->db->order_by('a.id','desc');
+		$this->db->order_by('a.id','asc');
 		if($is_single_row==1){
 			return 	$this->db->get_where($this->tableAs,$where)->row_array();
 		}

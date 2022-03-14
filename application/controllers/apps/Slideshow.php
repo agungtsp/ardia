@@ -61,7 +61,7 @@ class Slideshow extends CI_Controller {
 
 			$data['list_lang'][$key]['list_status_publish'] 	= selectlist2(array('table'=>'status_publish','title'=>'Select Status','selected'=>$datas[$key]['id_status_publish']));
 			
-			$img_thumb											= image($datas[$key]['img'],'small');
+			$img_thumb											= image($datas[$key]['img'],'large');
 			$imagemanager										= imagemanager('img',$img_thumb,220,240,$key);
 			$data['list_lang'][$key]['img']						= $imagemanager['browse'];
 			$data['list_lang'][$key]['imagemanager_config']		= $imagemanager['config'];
@@ -86,7 +86,7 @@ class Slideshow extends CI_Controller {
 				$data['list_lang'][$key]['slideshow_sub_title'] 		= $datas[$key]['slideshow_sub_title'];
 				$data['list_lang'][$key]['description'] 			= $datas[$key]['description'];
 				
-				$data['list_lang'][$key]['img_thumb'] 				= image($datas[$key]['img'],'small');
+				$data['list_lang'][$key]['img_thumb'] 				= image($datas[$key]['img'],'large');
 				$data['list_lang'][$key]['img_ori'] 				= image($datas[$key]['img'],'large');
 				$data['list_lang'][$key]['style_position'] 			= '';
 				$data['list_lang'][$key]['style_background']		= '';

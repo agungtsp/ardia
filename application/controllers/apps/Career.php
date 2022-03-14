@@ -27,6 +27,7 @@ class Career extends CI_Controller {
 			$data['judul']				= 'Add';
 			$data['proses']				= 'Simpan';
 			$data['title']	= '';
+			$data['uri_path']	= '';
 			$data['salary_range']	= '';
 			$data['departement']	= '';
 			$data['location']	= '';
@@ -50,6 +51,7 @@ class Career extends CI_Controller {
 			$data['list_lang'][$key]['nomor']			= $key;
 			$data['list_lang'][$key]['checked_is_featured']      = ($datas[$key]['is_featured']==1)?"checked":'';
 			$data['list_lang'][$key]['title'] 		= $datas[$key]['title'];
+			$data['list_lang'][$key]['uri_path'] 		= $datas[$key]['uri_path'];
 			$data['list_lang'][$key]['salary_range'] 		= $datas[$key]['salary_range'];
 			$data['list_lang'][$key]['departement'] 		= $datas[$key]['departement'];
 			$data['list_lang'][$key]['location'] 		= $datas[$key]['location'];
@@ -63,7 +65,7 @@ class Career extends CI_Controller {
 
 			$data['list_lang'][$key]['list_status_publish'] 	= selectlist2(array('table'=>'status_publish','title'=>'Select Status','selected'=>$datas[$key]['id_status_publish']));
 			
-			$img_thumb											= image($datas[$key]['img'],'small');
+			$img_thumb											= image($datas[$key]['img'],'large');
 			$imagemanager										= imagemanager('img',$img_thumb,400,230,$key);
 			$data['list_lang'][$key]['img']						= $imagemanager['browse'];
 			$data['list_lang'][$key]['imagemanager_config']		= $imagemanager['config'];
@@ -108,6 +110,7 @@ class Career extends CI_Controller {
 				}
 
 				$data_save['title'] 		= $post['title'][$key];
+				$data_save['uri_path'] 		= $post['uri_path'][$key];
 				$data_save['salary_range'] 		= $post['salary_range'][$key];
 				$data_save['url'] 					= $post['url'][$key];
 				$data_save['publish_date']			= $publish_date;

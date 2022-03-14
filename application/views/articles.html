@@ -4,29 +4,21 @@
 
 <section class="articles p-page">
   <div class="container">
-    <h2 class="title-sec text-start wow fadeInUp mb-5 mb-20-m">Our Articles</h2>
+    <h2 class="title-sec text-start wow fadeInUp mb-5 mb-20-m">{lang_our_articles}</h2>
     <div class="row">
       <div class="col-md-8 col-articles">
-        <a href="{base_url_lang}articles/detail" class="c-latest wow fadeInUp">
-          <div class="thumb"><img src="{base_url}asset/images/latest1.jpg" alt=""></div>
+        {list_articles}
+        <a href="{base_url_lang}articles/detail/{uri_path}" class="c-latest wow fadeInUp">
+          <div class="thumb"><img src="{img}" alt=""></div>
           <div class="desc">
-            <h3>Mirage Deep Dive Understanding Timing Response</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum provident ut repellendus magni obcaecati hic a veritatis, similique dolores itaque. Ullam, dignissimos laborum tempora officiis excepturi nostrum nemo, repellat magnam.</p>
+            <h3>{title}</h3>
+            <p>{teaser}</p>
             <div class="text-end mt-5">
-              <span class="btn btn-outline-primary">Read More</span>
+              <span class="btn btn-outline-primary">{lang_read_more}</span>
             </div>
           </div>
         </a>
-        <a href="{base_url_lang}articles/detail" class="c-latest wow fadeInUp">
-          <div class="thumb"><img src="{base_url}asset/images/latest1.jpg" alt=""></div>
-          <div class="desc">
-            <h3>Mirage Deep Dive Understanding Timing Response</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum provident ut repellendus magni obcaecati hic a veritatis, similique dolores itaque. Ullam, dignissimos laborum tempora officiis excepturi nostrum nemo, repellat magnam.</p>
-            <div class="text-end mt-5">
-              <span class="btn btn-outline-primary">Read More</span>
-            </div>
-          </div>
-        </a>
+        {/list_articles}
       </div>
       <div class="col-md-4">
         <div id="actionRAnchor"></div>
@@ -42,13 +34,13 @@
               </span>
             </div>
           </a>
-          <a href="#" class="btn btn-orange-outline mb-5">
+          <a href="tel:{email_address}" class="btn btn-orange-outline mb-5">
             <i data-feather='mail'></i>
-            Email us now!
+            {lang_email_us}
           </a>
-          <a href="#" class="btn btn-orange-outline">
+          <a href="tel:{single_phone}" class="btn btn-orange-outline">
             <i data-feather='phone-call'></i>
-            Call us now!
+            {lang_call_us_now}
           </a>
         </div>
       </div>
@@ -58,11 +50,11 @@
 
 <section class="need-further">
   <div class="container text-center">
-    <h3 class="wow fadeInUp mb-4">Need Urgent Advice?</h3>
+    <h3 class="wow fadeInUp mb-4">{lang_need_urgent}</h3>
     <div class="text-center">
       <div class="d-inline-flex">
-        <a href="#" class="btn btn-outline-light wow fadeInLeft me-3 px-4">Call Us Now!</a>
-        <a href="#" class="btn btn-outline-light wow fadeInRight px-5">E-Mail Us</a>
+        <a href="tel:{single_phone}" class="btn btn-outline-light wow fadeInLeft me-3 px-4">{lang_call_us_now}</a>
+        <a href="mailto:{email_address}" class="btn btn-outline-light wow fadeInRight px-5">{lang_email_us}</a>
       </div>
     </div>
   </div>

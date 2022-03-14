@@ -28,6 +28,7 @@ class Article extends CI_Controller {
 			$data['proses']				= 'Simpan';
 			$data['title']	= '';
 			$data['teaser']	= '';
+			$data['uri_path']	= '';
 			// $data['description2']		= '';
 			$data['background']			= '';
 			$data['color']				= '';
@@ -46,7 +47,9 @@ class Article extends CI_Controller {
 			$data['list_lang'][$key]['validation']		= ($key==0) ? 'true' : 'false';
 			$data['list_lang'][$key]['nomor']			= $key;
 			$data['list_lang'][$key]['checked_is_featured']      = ($datas[$key]['is_featured']==1)?"checked":'';
+			$data['list_lang'][$key]['title'] 		= $datas[$key]['title'];
 			$data['list_lang'][$key]['teaser'] 		= $datas[$key]['teaser'];
+			$data['list_lang'][$key]['uri_path'] 		= $datas[$key]['uri_path'];
 			$data['list_lang'][$key]['type'] 		= $datas[$key]['type'];
 			$data['list_lang'][$key]['url'] 					= $datas[$key]['url'];
 			$data['list_lang'][$key]['publish_date'] 			= iso_date($datas[$key]['publish_date']);
@@ -57,7 +60,7 @@ class Article extends CI_Controller {
 
 			$data['list_lang'][$key]['list_status_publish'] 	= selectlist2(array('table'=>'status_publish','title'=>'Select Status','selected'=>$datas[$key]['id_status_publish']));
 			
-			$img_thumb											= image($datas[$key]['img'],'small');
+			$img_thumb											= image($datas[$key]['img'],'large');
 			$imagemanager										= imagemanager('img',$img_thumb,400,230,$key);
 			$data['list_lang'][$key]['img']						= $imagemanager['browse'];
 			$data['list_lang'][$key]['imagemanager_config']		= $imagemanager['config'];
@@ -103,6 +106,7 @@ class Article extends CI_Controller {
 
 				$data_save['title'] 		= $post['title'][$key];
 				$data_save['teaser'] 		= $post['teaser'][$key];
+				$data_save['uri_path'] 		= $post['uri_path'][$key];
 				$data_save['url'] 					= $post['url'][$key];
 				$data_save['publish_date']			= $publish_date;
 				$data_save['description'] 			= $post['description'][$key];

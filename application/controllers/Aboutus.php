@@ -12,6 +12,14 @@ class Aboutus extends CI_Controller
     function index()
     {
         $id_lang = id_lang();
+        $this->load->model('pagesmodel');
+        $filter_pages['id_lang'] = $id_lang;
+        $data = $this->pagesmodel->findBy($filter_pages);	
+        foreach ($data as $key => $value) {
+            $data['img'] = getImgLink($value['img'], 'large');
+            $data['description'] = $value['description'];
+            $data['sub_title'] = $value['sub_title'];
+        }
         if ($data["seo_title"] == "") {
             $data["seo_title"] = "ARDIA PERDANA";
         }

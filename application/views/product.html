@@ -4,7 +4,7 @@
 
 <section class="product p-page">
   <div class="container">
-    <h2 class="title-sec text-start wow fadeInUp mb-5 mb-20-m">Product</h2>
+    <h2 class="title-sec text-start wow fadeInUp mb-5 mb-20-m">{lang_menu_product}</h2>
     <div class="row mb-5 mb-20-m">
           <div class="col-6">
                   <button class="btn btn-glp wow zoomIn active" id="grid"><i data-feather="grid"></i></button>
@@ -19,137 +19,39 @@
           </div>
       </div> 
     <div class="row" id="products">
-      <a href="{base_url_lang}product/detail" class="col-md-4 item-product">
+      {list_product}
+      <a href="{base_url_lang}product/detail/{uri_path}" class="col-md-4 item-product">
         <div class="thumb-list">
           <div class="c-coll wow fadeInUp" data-wow-duration=".5s">
             <div class="desc">
-              <h3>Multipurpose Disintfectant</h3>
-              <div class="thumb"><img src="{base_url}asset/images/coll-1.png" alt=""></div>
+              <h3>{title}</h3>
+              <div class="thumb"><img src="{img}" alt=""></div>
             </div>
           </div>
         </div>
         <div class="decs-list">
           <div>
-            <h3>Multipurpose Disintfectant</h3>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nobis accusantium ut, repudiandae, commodi quo impedit qui similique aliquam? Possimus labore ea ipsum neque iure, quae tenetur soluta dignissimos quis, omnis.</p>
+            <h3>{title}</h3>
+            <p>{teaser}</p>
             <div class="price">
-              <span>Rp 23.456</span>
-              <i>Rp 12.345</i>
+              <span>{price}</span>
+              <i>{price}</i>
             </div>
           </div>
         </div>
       </a>
-      <a href="{base_url_lang}product/detail" class="col-md-4 item-product">
-        <div class="thumb-list">
-          <div class="c-coll wow fadeInUp" data-wow-duration=".5s">
-            <div class="desc">
-              <h3>Povidone Iodine</h3>
-              <div class="thumb"><img src="{base_url}asset/images/coll-2.png" alt=""></div>
-            </div>
-          </div>
-        </div>
-        <div class="decs-list">
-          <div>
-            <h3>Povidone Iodine</h3>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nobis accusantium ut, repudiandae, commodi quo impedit qui similique aliquam? Possimus labore ea ipsum neque iure, quae tenetur soluta dignissimos quis, omnis.</p>
-            <div class="price">
-              <span>Rp 23.456</span>
-              <i>Rp 12.345</i>
-            </div>
-          </div>
-        </div>
-      </a>
-      <a href="{base_url_lang}product/detail" class="col-md-4 item-product">
-        <div class="thumb-list">
-          <div class="c-coll wow fadeInUp" data-wow-duration=".5s">
-            <div class="desc">
-              <h3>Multipurpose Disintfectant</h3>
-              <div class="thumb"><img src="{base_url}asset/images/coll-1.png" alt=""></div>
-            </div>
-          </div>
-        </div>
-        <div class="decs-list">
-          <div>
-            <h3>Multipurpose Disintfectant</h3>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nobis accusantium ut, repudiandae, commodi quo impedit qui similique aliquam? Possimus labore ea ipsum neque iure, quae tenetur soluta dignissimos quis, omnis.</p>
-            <div class="price">
-              <span>Rp 23.456</span>
-              <i>Rp 12.345</i>
-            </div>
-          </div>
-        </div>
-      </a>
-      <a href="{base_url_lang}product/detail" class="col-md-4 item-product">
-        <div class="thumb-list">
-          <div class="c-coll wow fadeInUp" data-wow-duration=".5s">
-            <div class="desc">
-              <h3>Povidone Iodine</h3>
-              <div class="thumb"><img src="{base_url}asset/images/coll-2.png" alt=""></div>
-            </div>
-          </div>
-        </div>
-        <div class="decs-list">
-          <div>
-            <h3>Povidone Iodine</h3>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nobis accusantium ut, repudiandae, commodi quo impedit qui similique aliquam? Possimus labore ea ipsum neque iure, quae tenetur soluta dignissimos quis, omnis.</p>
-            <div class="price">
-              <span>Rp 23.456</span>
-              <i>Rp 12.345</i>
-            </div>
-          </div>
-        </div>
-      </a>
-      <a href="{base_url_lang}product/detail" class="col-md-4 item-product">
-        <div class="thumb-list">
-          <div class="c-coll wow fadeInUp" data-wow-duration=".5s">
-            <div class="desc">
-              <h3>Multipurpose Disintfectant</h3>
-              <div class="thumb"><img src="{base_url}asset/images/coll-1.png" alt=""></div>
-            </div>
-          </div>
-        </div>
-        <div class="decs-list">
-          <div>
-            <h3>Multipurpose Disintfectant</h3>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nobis accusantium ut, repudiandae, commodi quo impedit qui similique aliquam? Possimus labore ea ipsum neque iure, quae tenetur soluta dignissimos quis, omnis.</p>
-            <div class="price">
-              <span>Rp 23.456</span>
-              <i>Rp 12.345</i>
-            </div>
-          </div>
-        </div>
-      </a>
-      <a href="{base_url_lang}product/detail" class="col-md-4 item-product">
-        <div class="thumb-list">
-          <div class="c-coll wow fadeInUp" data-wow-duration=".5s">
-            <div class="desc">
-              <h3>Povidone Iodine</h3>
-              <div class="thumb"><img src="{base_url}asset/images/coll-2.png" alt=""></div>
-            </div>
-          </div>
-        </div>
-        <div class="decs-list">
-          <div>
-            <h3>Povidone Iodine</h3>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nobis accusantium ut, repudiandae, commodi quo impedit qui similique aliquam? Possimus labore ea ipsum neque iure, quae tenetur soluta dignissimos quis, omnis.</p>
-            <div class="price">
-              <span>Rp 23.456</span>
-              <i>Rp 12.345</i>
-            </div>
-          </div>
-        </div>
-      </a>
+      {/list_product}
     </div>
   </div>
 </section>
 
 <section class="need-further">
   <div class="container text-center">
-    <h3 class="wow fadeInUp mb-4">Need Urgent Advice?</h3>
+    <h3 class="wow fadeInUp mb-4">{lang_need_urgent}</h3>
     <div class="text-center">
       <div class="d-inline-flex">
-        <a href="#" class="btn btn-outline-light wow fadeInLeft me-3 px-4">Call Us Now!</a>
-        <a href="#" class="btn btn-outline-light wow fadeInRight px-5">E-Mail Us</a>
+        <a href="tel:{single_phone}" class="btn btn-outline-light wow fadeInLeft me-3 px-4">{lang_call_us_now}</a>
+        <a href="mailto:{email_address}" class="btn btn-outline-light wow fadeInRight px-5">{lang_email_us}</a>
       </div>
     </div>
   </div>

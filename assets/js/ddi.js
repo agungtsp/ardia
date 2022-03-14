@@ -93,6 +93,12 @@ $(document).ready(function(){
 	$('#title,#uri_path').keyup(function(){
 		$('#uri_path').val( convert_to_uri( $(this).val() ) );
 	})
+	$('#title0,#uri_path0').keyup(function(){
+		$('#uri_path0').val( convert_to_uri( $(this).val() ) );
+	})
+	$('#title1,#uri_path1').keyup(function(){
+		$('#uri_path1').val( convert_to_uri( $(this).val() ) );
+	})
 	//news
 	$('#approve,#revise').click(function(){
 		var proses = $(this).attr('id');

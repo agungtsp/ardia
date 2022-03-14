@@ -6,6 +6,7 @@ class Careers extends CI_Controller
     function __construct()
     {
         parent::__construct();
+        $this->load->model('careermodel');
     }
 
 
@@ -24,12 +25,25 @@ class Careers extends CI_Controller
 
         $data["active_careers"] = "active";
 
+        $filter_career['id_lang'] = $id_lang;
+        $data['list_careers'] = $this->careermodel->findBy($filter_career);	
+        foreach ($data['list_careers'] as $key => $value) {
+            $data['list_careers'][$key]['img'] = getImgLink($value['img'], 'large');
+        }   
+
         render("careers", $data);
     }
 
-    function detail()
+    function detail($uri_path)
     {
         $id_lang = id_lang();
+        $filter_career['id_lang'] = $id_lang;
+        $filter_career['uri_path'] = $uri_path;
+        $data = $this->careermodel->findBy($filter_career, 1);
+        $data['img'] = getImgLink($data['img'], 'large');
+        if(!$data){
+            redirect(base_url().'tidakditemukan');
+        }
         if ($data["seo_title"] == "") {
             $data["seo_title"] = "ARDIA PERDANA";
         }

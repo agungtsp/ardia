@@ -6,38 +6,38 @@
   <div class="container">
     <div class="row">
       <div class="col-md-8 col-form">
-        <h4 class="mb-5 wow fadeInUp">Tell Us your problems, <br>sand we will contact you for the best solutions!</h4>
-        <form action="">
+        <h4 class="mb-5 wow fadeInUp">{lang_content_contact_us}</h4>
+        <form action="" id="form1">
           <div class="row mb-4 wow fadeInUp">
             <div class="col-sm-4 col-md-3"><label for="">Full Name <span class="text-danger">*</span></label></div>
             <div class="col-sm-8 col-md-9">
-              <input type="text" class="form-control" placeholder="">
+              <input type="text" class="form-control" required placeholder="" name="name" id="name">
             </div>
           </div>
           <div class="row mb-4 wow fadeInUp">
             <div class="col-sm-4 col-md-3"><label for="">Email <span class="text-danger">*</span></label></div>
             <div class="col-sm-8 col-md-9">
-              <input type="email" class="form-control" placeholder="">
+              <input type="email" class="form-control" required placeholder="" name="email" id="email">
             </div>
           </div>
           <div class="row mb-4 wow fadeInUp">
             <div class="col-sm-4 col-md-3"><label for="">WhatsApp Number</label></div>
             <div class="col-sm-8 col-md-9">
-              <input type="text" class="form-control" placeholder="">
+              <input type="text" class="form-control" required placeholder="" name="phone_number" id="phone_number">
             </div>
           </div>
           <div class="row mb-4 wow fadeInUp">
             <div class="col-sm-4 col-md-3"><label for="">Notes</label></div>
             <div class="col-sm-8 col-md-9">
-              <textarea class="form-control" placeholder="" rows="4"></textarea>
+              <textarea class="form-control" required placeholder="" rows="4" name="message" id="message"></textarea>
             </div>
           </div>
           <div class="row mb-4 wow fadeInUp">
             <div class="col-sm-4 col-md-3"></div>
-            <div class="col-sm-8 col-md-9 mb-5"><img src="{base_url}asset/images/captcha.jpg" alt=""></div>
+            <div class="col-sm-8 col-md-9 mb-5"></div>
             <div class="col-sm-4 col-md-3"></div>
             <div class="col-sm-8 col-md-9">
-              <button class="btn btn-outline-primary w-100">SUBMIT</button>
+              <button class="btn btn-outline-primary w-100" id="contact_us_btn">SUBMIT</button>
             </div>
           </div>
         </form>
@@ -56,16 +56,17 @@
               </span>
             </div>
           </a>
-          <a href="#" class="btn btn-orange-outline mb-5">
+          <a href="tel:{email_address}" class="btn btn-orange-outline mb-5">
             <i data-feather='mail'></i>
-            Email us now!
+            {lang_email_us}
           </a>
-          <a href="#" class="btn btn-orange-outline">
+          <a href="mailto:{single_phone}" class="btn btn-orange-outline">
             <i data-feather='phone-call'></i>
-            Call us now!
+            {lang_call_us_now}
           </a>
         </div>
       </div>
     </div>
   </div>
 </section>
+<script src='https://www.google.com/recaptcha/api.js?render={recaptcha_site_key}'></script>
