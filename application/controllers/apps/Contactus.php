@@ -4,7 +4,7 @@ class Contactus extends CI_Controller {
 	function __construct(){
 		parent::__construct();
 		$this->load->model('contactusmodel');
-		$this->load->model('contactUsReplyModel');
+		$this->load->model('contactusreplymodel');
 	}
 	function index(){
 		// $data['list_cat'] = selectlist2(array('table'=>'ref_kategori_logframe','title'=>'All Category'));
@@ -63,7 +63,7 @@ class Contactus extends CI_Controller {
 			if(strlen($value['komentar']) > 150){
 				$message .= ' ...';
 			}
-			$data_reply = $this->contactUsReplyModel->findBy(array('id_contact_us'=>$value['id']));
+			$data_reply = $this->contactusreplymodel->findBy(array('id_contact_us'=>$value['id']));
 			if($data_reply){
 				$data['data'][$key]['status'] = 'Replied';
 			} else {
@@ -76,7 +76,7 @@ class Contactus extends CI_Controller {
 	}
 	function detail($id){
 		$data = $this->contactusmodel->findById($id);
-		$data['reply'] = $this->contactUsReplyModel->findBy(array('id_contact_us'=>$id));
+		$data['reply'] = $this->contactusreplymodel->findBy(array('id_contact_us'=>$id));
 		foreach ($data['reply'] as $key => $value) {
 			$data['reply'][$key]['create_datex'] = iso_date_time($value['create_date']);
 			$data['reply'][$key]['messagex'] = $value['message'];
@@ -98,7 +98,7 @@ class Contactus extends CI_Controller {
 			// $sent == 1;
 
 			if($sent){
-				$this->contactUsReplyModel->insert($post);
+				$this->contactusreplymodel->insert($post);
 				// print_r($this->db->last_query());exit;
 			}
 			else{
