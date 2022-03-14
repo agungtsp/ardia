@@ -3,7 +3,7 @@
 class Contactus extends CI_Controller {
 	function __construct(){
 		parent::__construct();
-		$this->load->model('contactUsModel');
+		$this->load->model('contactusmodel');
 		$this->load->model('contactUsReplyModel');
 	}
 	function index(){
@@ -18,7 +18,7 @@ class Contactus extends CI_Controller {
 		if($idedit){
 			$where['id !=']		= $idedit;
 		}
-		$unik 					= $this->contactUsModel->findBy($where);
+		$unik 					= $this->contactusmodel->findBy($where);
 		$this->form_validation->set_rules('page_name', '"page Name"', 'required'); 
 		$this->form_validation->set_rules('uri_path', '"Page URL"', 'required'); 
 		$this->form_validation->set_rules('teaser', '"Teaser"', 'required'); 
@@ -38,13 +38,13 @@ class Contactus extends CI_Controller {
 					if(!$post['img']){
 						unset($post['img']);
 					}
-					$this->contactUsModel->update($post,$idedit);
+					$this->contactusmodel->update($post,$idedit);
 				}
 				else{
 					auth_insert();
 					$ret['message'] = 'Insert Success';
 					$act			= "Insert Contact Us";
-					$this->contactUsModel->insert($post);
+					$this->contactusmodel->insert($post);
 				}
 			detail_log();
 			insert_log($act);
@@ -55,7 +55,7 @@ class Contactus extends CI_Controller {
 		echo json_encode($ret);
 	}
 	function records(){
-		$data = $this->contactUsModel->records();
+		$data = $this->contactusmodel->records();
 		// echo $this->db->last_query();exit();		
 		foreach ($data['data'] as $key => $value) {
 			// $data['data'][$key]['page_name'] = quote_form($value['page_name']);
@@ -75,7 +75,7 @@ class Contactus extends CI_Controller {
 		render('apps/contactus/records',$data,'blank');
 	}
 	function detail($id){
-		$data = $this->contactUsModel->findById($id);
+		$data = $this->contactusmodel->findById($id);
 		$data['reply'] = $this->contactUsReplyModel->findBy(array('id_contact_us'=>$id));
 		foreach ($data['reply'] as $key => $value) {
 			$data['reply'][$key]['create_datex'] = iso_date_time($value['create_date']);
@@ -86,7 +86,7 @@ class Contactus extends CI_Controller {
 	function reply(){
 		$post = $this->input->post();
 		if($post){
-			$contactus  = $this->contactUsModel->findById($post['id_contact_us']);
+			$contactus  = $this->contactusmodel->findById($post['id_contact_us']);
 			$data['name'] = $contactus['name'];
 			$data['date'] = iso_date_time($contactus['create_date']);
 			$data['question'] = $contactus['message'];
@@ -115,7 +115,7 @@ class Contactus extends CI_Controller {
 		$alias['search_title'] = 'a.name';
 		$alias['search_topic'] = 'b.name';
 		where_grid($post, $alias);
-		$data['data'] = $this->contactUsModel->export_to_excel();
+		$data['data'] = $this->contactusmodel->export_to_excel();
 		$i=1;
 		foreach ($data['data'] as $key => $value) {
 			$message = substr($value['komentar'],0,150);

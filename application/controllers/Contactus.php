@@ -20,10 +20,10 @@ class Contactus extends CI_Controller {
 				 $message = validation_errors();
 				 $status  = 'error';
 			} else {
-				$this->load->model('contactUsModel');
+				$this->load->model('contactusmodel');
 				$post['contact_date'] = iso_date_custom_format(date('Y-m-d H:i:s'),'d-m-Y H:i:s');
 				unset($post['g-recaptcha-response'], $post['action']);
-				$proses               = $this->contactUsModel->insert($post);
+				$proses               = $this->contactusmodel->insert($post);
 				if($proses){
 					sent_email_by_category(14,$post,'');
 					$status  = 'success';
