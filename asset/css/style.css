@@ -194,7 +194,6 @@ h1, h2, h3, h4, h5, h6 {
 .item-slide .desc-slide {
     display: flex;
     align-items: center;
-    padding: 0 70px;
 }
 .item-slide .desc-slide .text-desc {
     display: flex;

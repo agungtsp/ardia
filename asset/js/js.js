@@ -10,11 +10,12 @@ $(window).scroll(function() {
 
 jQuery(window).load(function(){
     jQuery("#slide-index").owlCarousel({
-        loop: true,
+        animationIn: 'none',
+        loop:true,
         margin:0,
         dots: false,
-        autoplay: true,
-        autoplayTimeout: 5000,
+        // autoplay: true,
+        // autoplayTimeout: 5000,
         items: 1,
         animateIn: "fadeIn",
         animateOut: "fadeOut",
