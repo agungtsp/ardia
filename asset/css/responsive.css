@@ -367,8 +367,32 @@
 	.owl-services-dtl.owl-carousel .owl-nav button.owl-next {
 	    right: 0;
 	}
+	.banner h1 {
+		font-size: 22px;
+		margin-bottom: 15px !important;
+	}
+	.banner h5 {
+		font-size: 16px;
+		margin-bottom: 15px !important;
+	}
 }
 @media screen and (max-width: 575px) {
+	.banner {
+		margin-top: 20px;
+		position: relative;
+		min-height: 250px;
+	}
+	.banner img {
+	  position: absolute;
+	  left: 50%;
+	  top: 50%;
+	  height: 100%;
+	  width: auto;
+	  -webkit-transform: translate(-50%,-50%);
+	      -ms-transform: translate(-50%,-50%);
+	          transform: translate(-50%,-50%);
+	}
+
 	.services-dtl .btn-outline-primary {
 		width: 100% !important;
 	}
@@ -541,10 +565,32 @@
 	.subtitle-404 {
 		font-size: 24px;
 	}
+	.banner:before {
+		position: absolute;
+		left: 0;
+		top: 0;
+		height: 100%;
+		width: 100%;
+		background: #006387;
+		content: "";
+		z-index: 1;
+		opacity: .3;
+	}
+	.banner .text-banner {
+		z-index: 2;
+	}
 }
 @media screen and (max-width: 400px) {
 	.top-header span:first-child {
 		display: none !important;
+	}
+	.banner .col-12 {
+		text-align: center;
+	}
+	.banner img {
+		left: auto;
+		top: auto;
+		transform: none;
 	}
 }
 @media screen and (max-width: 340px) {
