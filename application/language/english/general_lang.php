@@ -11,13 +11,13 @@ $lang['lang_collection'] = 'Our Collection';
 $lang['lang_our_services'] = 'Our Services';
 $lang['lang_our_articles'] = 'Our Articles';
 $lang['lang_last_article'] = 'Latest from our Article';
-$lang['lang_need_urgent'] = 'Need Urgent Advice?';
+$lang['lang_need_urgent'] = 'Need Further Discussion?';
 $lang['lang_useful_links'] = 'Userful Links';
 $lang['lang_connect_with_us'] = 'Connect With Us';
 $lang['lang_call_us_now'] = 'Call Us Now!';
 $lang['lang_email_us'] = 'E-mail Us';
 $lang['lang_read_more'] = 'Read More';
-$lang['lang_content_contact_us'] = 'Tell Us your problems, <br>sand we will contact you for the best solutions!';
+$lang['lang_content_contact_us'] = 'Tell Us your problems, <br>send we will contact you for the best solutions!';
 
 $lang['lang_contact_fullname'] = 'Fullname';
 $lang['lang_contact_email'] = 'E-mail';

@@ -693,12 +693,17 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: 20px;
     transition: ease all .5s;
 }
+.product-detail li,
 .list-item p, .product-detail .desc p, .product-detail p {
     margin-bottom: 20px;
     font-size: 18px;
     color: #7b7b7b;
     transition: ease all .5s;
     font-style: italic;
+}
+.product-detail li {
+    font-size: 18px;
+    color: #7b7b7b;
 }
 .c-detail p,
 .c-detail li {
