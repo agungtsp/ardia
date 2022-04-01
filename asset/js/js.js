@@ -60,28 +60,22 @@ $(".btn-glp").click(function () {
   }
 });
 
-$(document).ready(function() {
-    // Cache selectors for faster performance.
-    var $window = $(window),
-        actionR = $('#actionR'),
-        actionRAnchor = $('#actionRAnchor');
+// $(document).ready(function() {
+//     var $window = $(window),
+//         actionR = $('#actionR'),
+//         actionRAnchor = $('#actionRAnchor');
 
-    // Run this on scroll events.
-    $window.scroll(function() {
-        var window_top = $window.scrollTop();
-        var div_top = actionRAnchor.offset().top;
-        if (window_top > div_top) {
-            // Make the div sticky.
-            actionR.addClass('stick');
-            // actionRAnchor.height(actionR.height());
-        }
-        else {
-            // Unstick the div.
-            actionR.removeClass('stick');
-            // actionRAnchor.height(0);
-        }
-    });
-});
+//     $window.scroll(function() {
+//         var window_top = $window.scrollTop();
+//         var div_top = actionRAnchor.offset().top;
+//         if (window_top > div_top) {
+//             actionR.addClass('stick');
+//         }
+//         else {
+//             actionR.removeClass('stick');
+//         }
+//     });
+// });
 
 $('.owl-services-dtl').owlCarousel({
     loop:true,
