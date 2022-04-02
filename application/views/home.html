@@ -32,7 +32,7 @@
         <div class="c-coll wow fadeInUp" data-wow-duration=".5s">
           <div class="desc">
             <h3>{title}</h3>
-            <a href="{url}" class="btn btn-outline-primary">Order Now</a>
+            <a href="{url}" class="btn btn-outline-primary">{lang_order_now}</a>
             <div class="thumb"><img src="{img}" alt=""></div>
           </div>
         </div>
@@ -49,9 +49,9 @@
       <div class="row justify-content-end">
       <!--<a href="{base_url}contactus" class>-->
           <div class="col-sm-7 col-12 wow fadeInDown">
-            <h1 class="text-white mb-3"><b>"You can label this bottle!"</b></h1>
-            <h5 class="subtitle-sec fs-18 mb-4">by producing your own medical device and household.</h5>
-            <a href="{base_url}contactus" class="btn btn-outline-light">Join the Client Area and get your local product!</a></div>
+            <h1 class="text-white mb-3"><b>{lang_label_it}</b></h1>
+            <h5 class="subtitle-sec fs-18 mb-4">{lang_label_produce}</h5>
+            <a href="{base_url}contactus" class="btn btn-outline-light">{lang_label_join}</a></div>
       </div>
       <!--</a>-->
     </div>
@@ -64,7 +64,7 @@
     <div class="row">
       {list_service}
       <div class="col-md-4">
-        <a href="{base_url}service/detail/{uri_path}" class="c-services wow fadeInUp" data-wow-duration=".5s">
+        <a href="{base_url}services/detail/{uri_path}" class="c-services wow fadeInUp" data-wow-duration=".5s">
           <img src="{img}">
           <div class="desc">
             <h2>{title}</h2>
@@ -84,7 +84,7 @@
     <div class="row row-20">
       {list_article}
       <div class="col-md-4 col-20">
-        <a href="{base_url}article/detail/{uri_path}" class="c-latest wow fadeInUp" data-wow-duration=".5s">
+        <a href="{base_url}articles/detail/{uri_path}" class="c-latest wow fadeInUp" data-wow-duration=".5s">
           <div class="thumb"><img src="{img}" alt=""></div>
           <div class="desc">
             <h3>{title}</h3>

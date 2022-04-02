@@ -70,8 +70,15 @@
 				<li class="nav-item">
 				  <a class="nav-link {active_careers}" href="{base_url_lang}careers">{lang_menu_careers}</a>
 				</li>
-				<li class="nav-item">
-				  <a class="nav-link {active_articles}" href="{base_url_lang}articles">{lang_menu_articles}</a>
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle {active_articles} {active_event}" href="#" id="navAbout" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+					  {lang_menu_articles}
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="navAbout">
+					  <li><a class="dropdown-item" href="{base_url_lang}articles">{lang_menu_articles}</a></li>
+					  <li><a class="dropdown-item" href="{base_url_lang}event">{lang_menu_event}</a></li>
+					</ul>
+				  </li>
 				</li>
 				<li class="nav-item">
 				  <a class="nav-link {active_contactus}" href="{base_url_lang}contactus">{lang_menu_contact_us}</a>

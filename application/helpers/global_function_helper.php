@@ -111,9 +111,9 @@ function render($view,$data='',$layout="", $ret=false){
 	}
 
 	$data['base_url_lang'] 	 	 = base_url_lang()."/";
-	$data['breadcrumb']          = $data['lang'] == 'apps' ? breadcrumb() : breadcrumb2();
+	$data['breadcrumb']          = $data['lang'] == 'apps' ? breadcrumb() : '';
 	$CI->breadcrumb              = $data['breadcrumb'];
-	$data['breadcrumb_frontend'] = breadcrumb_frontend($data['breadcrumb']);
+	// $data['breadcrumb_frontend'] = breadcrumb_frontend($data['breadcrumb']);
 	// print_r($data['breadcrumb_frontend']);exit;
 	$data['hide_banner_bottom'] = $data['hide_banner_bottom']? $data['hide_banner_bottom'] : '';
 	$data['app_name']           = APP_NAME;
